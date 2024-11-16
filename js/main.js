@@ -1,3 +1,5 @@
+import config from "./config.js";
+const API_KEY = config;
 
 /**** 현재 날짜, 시간 불러오고 api에 요청할 데이터 입력 ****************/
 // !!!중요) 날씨 데이터 코드보다 먼저 불러와야함
@@ -131,7 +133,7 @@ function requestForecastWeather () {
     var xhr = new XMLHttpRequest();
     let placeX = '62';
     let placeY = '123';
-    xhr.open('GET', 'https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey=6FUeLj9MpnYmNWV7JpgiDfu0LHTZVzlQdUV%2Btn0FsOGAWzWLnSSjMLgxyjoSHLR%2B9SKzTuRFKY7a7YaXn0DOjg%3D%3D&pageNo=1&numOfRows=12&dataType=JSON&base_date=' + todayYear + todayMonth + todayDate + '&base_time=' + forecastHour + '00&nx='+ placeX +'&ny=' + placeY, true); // 요청 초기화
+    xhr.open('GET', 'https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey='+ API_KEY +'&pageNo=1&numOfRows=12&dataType=JSON&base_date=' + todayYear + todayMonth + todayDate + '&base_time=' + forecastHour + '00&nx='+ placeX +'&ny=' + placeY, true); // 요청 초기화
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4) { // 요청이 완료되었을 때
             if (xhr.status === 200) { // 응답이 성공적일 때

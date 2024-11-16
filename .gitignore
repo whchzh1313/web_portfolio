@@ -1,0 +1,9 @@
+# Created by https://www.toptal.com/developers/gitignore/api/web
+# Edit at https://www.toptal.com/developers/gitignore?templates=web
+
+# Ignore config files
+js/config.js
+config.php
+# Ignore data folder
+data/dbconfig.php
+# End of https://www.toptal.com/developers/gitignore/api/web
