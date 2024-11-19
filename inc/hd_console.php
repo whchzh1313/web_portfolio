@@ -33,9 +33,17 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
         </li>
     </ul>
 </div>
-<div id="placeConsole"></div>
-<div id="timeConsole"></div>
-<div id="weatherConsole"></div>
+<div id="placeConsole">
+    
+    <div id="map"></div>
+    <button class="close"></button>
+</div>
+<div id="timeConsole">
+
+</div>
+<div id="weatherConsole">
+
+</div>
 <script>
     /* 현재 날짜, 시간 지정 */
     // var clockTarget = document.getElementById("clock");
@@ -57,6 +65,29 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
     // }
     // init();
     /* 갱신 시간 지정 */
+
+    // console 보이기, 숨기기
+    const _hdConsole = document.getElementById("hdConsole");
+    _hdConsole.querySelector("#btConsoleToggle").addEventListener("click", function() {
+        _hdConsole.classList.toggle("hide");
+    });
+
+
+    _hdConsole.querySelector("#placeName").addEventListener("click", function() {
+        document.getElementById("placeConsole").classList.toggle("active");
+    });
+    _hdConsole.querySelector("#dateTime").addEventListener("click", function() {
+        document.getElementById("timeConsole").classList.toggle("active");
+    });
+    _hdConsole.querySelector("#weatherIcon").addEventListener("click", function() {
+        document.getElementById("weatherConsole").classList.toggle("active");
+    });
+
+    
+    
+    
+
+    // TODO 클릭시 해당 기능 열리기 제작
 
     /******* Clock ********/
     const  clockTarget = document.getElementById("dateTime");
@@ -84,10 +115,13 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
         clockTarget.innerText = (hour < 10 ? '0' + hour : hour) + ':' + (minute < 10 ? '0' + minute : minute);
     }
 
-    const _hdConsole = document.getElementById("hdConsole");
-    _hdConsole.querySelector("#btConsoleToggle").addEventListener("click", function() {
-        _hdConsole.classList.toggle("hide");
-    });
+    /* 
+    https://apis.map.kakao.com/web/sample/addMapClickEvent/
+    카카오맵 지도에 클릭이벤트 달기
+    */
+    /* 
+    https://codepen.io/choiyoungjun90/pen/LYyYdaj
+    swiper 시간선택기 코드펜
+    */
 
-    
 </script>
