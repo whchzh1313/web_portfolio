@@ -15,7 +15,7 @@ if (G5_IS_MOBILE) {
 }
 
 include_once(G5_PATH.'/head.php');
-add_javascript('<script src="'.G5_JS_URL.'/main.js"></script>', 0);
+
 include_once(G5_PATH.'/inc/hd_console.php');
 ?>
 

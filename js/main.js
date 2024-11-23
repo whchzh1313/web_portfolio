@@ -1,5 +1,5 @@
 import config from "./config.js";
-const API_KEY = config;
+const API_KEY = config.API_KEY;
 
 /**** 현재 날짜, 시간 불러오고 api에 요청할 데이터 입력 ****************/
 // !!!중요) 날씨 데이터 코드보다 먼저 불러와야함
@@ -8,35 +8,41 @@ let todayYear = today.getFullYear();
 let todayMonth = today.getMonth()+1;
 let todayDate = (today.getDate()).toString().padStart(2, '0');
 let nowHour = today.getHours();
-let forecastHour; // 
-if (nowHour < 2) {
-    // 월을 감소시킴
-    todayMonth--; 
-    // 1월에서 12월로 넘어갈 경우 연도를 감소시킴
-    if (todayMonth < 1) {
-        todayMonth = 12;
-        todayYear--; 
+
+let forecastHour;
+
+function selectTime (hour) {
+    if (hour < 2) {
+        // 월을 감소시킴
+        todayMonth--; 
+        // 1월에서 12월로 넘어갈 경우 연도를 감소시킴
+        if (todayMonth < 1) {
+            todayMonth = 12;
+            todayYear--; 
+        }
+        forecastHour = "23";
+    } else if (hour >= 2 && hour < 5) {
+        forecastHour = "2";
+    } else if (hour >= 5 && hour < 8) {
+        forecastHour = "5";
+    } else if (hour >= 8 && hour < 11) {
+        forecastHour = "8";
+    } else if (hour >= 11 && hour < 14) {
+        forecastHour = "11";
+    } else if (hour >= 14 && hour < 17) {
+        forecastHour = "14";
+    } else if (hour >= 17 && hour < 20) {
+        forecastHour = "17";
+    } else if (hour >= 20 && hour < 23) {
+        forecastHour = "20";
+    } else {
+        forecastHour = "23";
     }
-    forecastHour = 23;
-} else if (nowHour >= 2 && nowHour < 5) {
-    forecastHour = 2;
-} else if (nowHour >= 5 && nowHour < 8) {
-    forecastHour = 5;
-} else if (nowHour >= 8 && nowHour < 11) {
-    forecastHour = 8;
-} else if (nowHour >= 11 && nowHour < 14) {
-    forecastHour = 11;
-} else if (nowHour >= 14 && nowHour < 17) {
-    forecastHour = 14;
-} else if (nowHour >= 17 && nowHour < 20) {
-    forecastHour = 17;
-} else if (nowHour >= 20 && nowHour < 23) {
-    forecastHour = 20;
-} else {
-    forecastHour = 23;
+    forecastHour = forecastHour.padStart(2, '0');
+    console.log(forecastHour);
 }
-forecastHour.toString().padStart(2, '0');
-nowHour.toString().padStart(2, '0');
+
+selectTime(nowHour);
 
 $(document).ready(function() {
     /**** document init ****************/
@@ -129,10 +135,8 @@ function initDetailSlick ($slk) {
 }
 
 // 단기예보에서 현재위치에 예보된 날씨를 요청함
-function requestForecastWeather () {
+function requestForecastWeather (placeX, placeY) {
     var xhr = new XMLHttpRequest();
-    let placeX = '62';
-    let placeY = '123';
     xhr.open('GET', 'https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey='+ API_KEY +'&pageNo=1&numOfRows=12&dataType=JSON&base_date=' + todayYear + todayMonth + todayDate + '&base_time=' + forecastHour + '00&nx='+ placeX +'&ny=' + placeY, true); // 요청 초기화
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4) { // 요청이 완료되었을 때
@@ -208,4 +212,4 @@ function requestForecastWeather () {
 
     xhr.send(); // 요청 전송
 }
-requestForecastWeather();
+requestForecastWeather(62, 123);
