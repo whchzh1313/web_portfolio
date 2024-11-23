@@ -78,12 +78,6 @@ $(document).ready(function() {
         nextArrow: $('#project_slk_next'),
         asNavFor: $('#project_slk')
     });
-    $('#project_slk_nav').on('afterChange', function (event, slick, currentSlide) {
-        $currentSlick = $('#project_slk .slick-current .detail_slk');
-        if (!$currentSlick.hasClass('slick-initialized')) {
-            initDetailSlick($currentSlick);
-        }
-    });
 
     $('#project_slk .project_detail .detail_slk').each(function () {
         if (!$(this).hasClass('slick-initialized')) {

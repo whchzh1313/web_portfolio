@@ -2,9 +2,9 @@
 
     /* 기본요소, 반복요소 끝 */
 
-    .time_2 .primary_bg {background: linear-gradient(135deg, #A0C4E1, #B3D7E9);}
-    .time_5 .primary_bg {background: linear-gradient(135deg, #B2E0E0, #C0E4E4);}
-    .time_8 .primary_bg {background: linear-gradient(135deg, #FFE3B4, #FFD54F);}
+    .time_02 .primary_bg {background: linear-gradient(135deg, #A0C4E1, #B3D7E9);}
+    .time_05 .primary_bg {background: linear-gradient(135deg, #B2E0E0, #C0E4E4);}
+    .time_08 .primary_bg {background: linear-gradient(135deg, #FFE3B4, #FFD54F);}
     .time_11 .primary_bg {background: linear-gradient(135deg, #B3E5FC, #B2EBF2);}
     .time_14 .primary_bg {background: linear-gradient(135deg, #B2EBF2, #E1F5FE);}
     .time_17 .primary_bg {background: linear-gradient(135deg, #FFCCBC, #FFAB91);}
@@ -13,9 +13,9 @@
     .title_circle.white_circle::after {background: #ffffff;}
     .title_circle.primary_circle::after {background: #e9ebf7;}
 
-    .time_2 .title_circle.primary_circle::after {background: linear-gradient(135deg, #A0C4E1, #B3D7E9);}
-    .time_5 .title_circle.primary_circle::after {background: linear-gradient(135deg, #B2E0E0, #C0E4E4);}
-    .time_8 .title_circle.primary_circle::after {background: linear-gradient(135deg, #FFE3B4, #FFD54F);}
+    .time_02 .title_circle.primary_circle::after {background: linear-gradient(135deg, #A0C4E1, #B3D7E9);}
+    .time_05 .title_circle.primary_circle::after {background: linear-gradient(135deg, #B2E0E0, #C0E4E4);}
+    .time_08 .title_circle.primary_circle::after {background: linear-gradient(135deg, #FFE3B4, #FFD54F);}
     .time_11 .title_circle.primary_circle::after {background: linear-gradient(135deg, #B3E5FC, #B2EBF2);}
     .time_14 .title_circle.primary_circle::after {background: linear-gradient(135deg, #B2EBF2, #E1F5FE);}
     .time_17 .title_circle.primary_circle::after {background: linear-gradient(135deg, #FFCCBC, #FFAB91);}
@@ -23,9 +23,9 @@
     .time_23 .title_circle.primary_circle::after {background: linear-gradient(135deg, #D1C4E9, #B2A6DB);}
     
     .primary_font {-webkit-text-stroke: 1px #fff;}
-    .time_2 .primary_font {color: #A0C4E1;}
-    .time_5 .primary_font {color: #B2E0E0;}
-    .time_8 .primary_font {color: #FFE3B4;}
+    .time_02 .primary_font {color: #A0C4E1;}
+    .time_05 .primary_font {color: #B2E0E0;}
+    .time_08 .primary_font {color: #FFE3B4;}
     .time_11 .primary_font {color: #B3E5FC;}
     .time_14 .primary_font {color: #B2EBF2;}
     .time_17 .primary_font {color: #FFCCBC;}
@@ -114,8 +114,8 @@
     #aboutMe .profile_wrap .flex_r .name_box {display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;}
     #aboutMe .profile_wrap .flex_r .name_box h3 {font-size: 1.5rem;font-weight: 700;}
     #aboutMe .profile_wrap .flex_r .name_box p {font-size: 1rem;font-weight: 500;align-content: end;margin-left: 8px;line-height: 1.25em;}
-    #aboutMe .profile_wrap .flex_r > p  {font-size: 1.5rem;line-height: 1.2em;font-weight: 700;}
-    #aboutMe .profile_wrap .flex_r > p.font_gray {color: #999999;margin-bottom: 20px;}
+    #aboutMe .profile_wrap .flex_r > p  {font-size: 1.5rem;line-height: 1.2em;}
+    #aboutMe .profile_wrap .flex_r > p.font_gray {color: #999999;margin-bottom: 20px;font-weight: 700;}
 
     #skill {padding-top: 64px;}
     #skill h3 {font-size: 2rem;font-weight: 700;line-height: 1em;margin-bottom: 32px;}
@@ -154,19 +154,22 @@
     #project #project_slk .project_detail .detail_wrap .detail_desc p {}
     #project #project_slk_nav {} 
     #project #project_slk_nav .project_logo {width: 240px;margin: 0 10px;cursor: pointer;}
-    #project #project_detail_slk_next_arrow {position: absolute;bottom: 548px;left: 708px;z-index: 1;cursor: pointer;}
+    #project #project_detail_slk_next_arrow {position: absolute;bottom: 548px;left: 684px;z-index: 1;cursor: pointer;}
     #project #project_slk_next {position: absolute;bottom: 208px;left: calc(100% + 24px);z-index: 1;cursor: pointer;}
     #project #project_slk_prev {position: absolute;bottom: 208px;right: calc(100% + 24px);z-index: 1;cursor: pointer;}
 
     #project #project_slk .project_detail .slick-dots {margin: 0;padding: 1rem 0;list-style-type: none;position: absolute;bottom: 0;left: 50%;transform: translateX(-50%);-webkit-transform: translateX(-50%);-moz-transform: translateX(-50%);-ms-transform: translateX(-50%);display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-box-pack: center;-moz-box-justify-content: center;-ms-flex-pack: center;justify-content: center;}
     #project #project_slk .project_detail .slick-dots li {margin: 0 0.25rem;}
-    #project #project_slk .project_detail .slick-dots li button {display: block;width: 0.5rem;height: 0.5rem;padding: 0;border: none;border-radius: 100%;background-color: #D9D9D9;text-indent: -9999px;}
+    #project #project_slk .project_detail .slick-dots li button {display: block;width: 0.5rem;height: 0.5rem;padding: 0;border: none;border-radius: 100%;background-color: #ffffff;text-indent: -9999px;}
     #project #project_slk .project_detail .slick-dots li.slick-active button {background-color: #767676;}
 }
 @media screen and (max-width: 767px) {
     /* mobile_header */
-    #header {padding: 16px 0;position: fixed;top: 12.5%;right: 0;z-index: 10000;transform: translateY(-50%);-webkit-transform: translateY(-50%);-moz-transform: translateY(-50%);-ms-transform: translateY(-50%);}
-    /* #header.scrollRun {background: #ffffff;-webkit-box-shadow: #888 0px 0px 4px;-moz-box-shadow: #888 0px 0px 4px;box-shadow: #888 0px 0px 4px;} */
+    #header {padding: 16px 0;position: fixed;width: 100%;top: 0;right: 0;z-index: 10000;-webkit-transition: all ease .3s;-moz-transition: all ease .3s;-o-transition: all ease .3s;transition: all ease .3s;}
+    #header a , #header h1 {color: #fff;}
+    #header.scrollRun {background: #ffffff;-webkit-box-shadow: #888 0px 0px 4px;-moz-box-shadow: #888 0px 0px 4px;box-shadow: #888 0px 0px 4px;}
+    #header.scrollRun a, #header.scrollRun h1 {color: #222;}
+    #header #logo {font-weight: 900;font-size: 6vw;line-height: 1em;padding: 0 2vw;}
     #header .header_wrap {text-align: right;}
     #header .header_wrap nav {}
     #header .header_wrap nav ul {height: 100%;}
@@ -174,7 +177,7 @@
     /* #header .header_wrap nav ul li:first-child {font-weight: 900;font-size: 6vw;line-height: 1em;} */
     
     /* section */
-    .section {padding: 12.5vw 0;width: 87.5vw;margin: 0 auto;position: relative;}
+    .section {padding: 12.5vw 0;position: relative;}
     .project_section {padding: 12.5vw 0;margin: 0 auto;position: relative;}
     .blue_bg {background: #e9ebf7;}
     .blue_gradiant_bg {background: linear-gradient(40deg, rgba(232,235,246,1) 0%, rgba(245,246,251,1) 100%);}
@@ -190,13 +193,13 @@
     #titleSection {height: 80vw;min-width: 87.5vw;}
     #titleSection.center_y_title {display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-box-orient: vertical;-moz-flex-direction: column;-ms-flex-direction: column;flex-direction: column;-webkit-box-pack: center;-moz-box-justify-content: center;-ms-flex-pack: center;justify-content: center;}
     #titleSection .wave_text {position: relative;}
-    #titleSection .wave_text .words {font-size: 12vw;line-height: 1.2em;color: #e9ebf7;-webkit-text-stroke: 0.4vw #222;font-weight: 900;position: absolute;top: 50%;left: 15%;transform: translateY(-50%);-webkit-transform: translateY(-50%);-moz-transform: translateY(-50%);-ms-transform: translateY(-50%);text-transform: uppercase;}
+    #titleSection .wave_text .words {font-size: 12vw;line-height: 1.2em;color: #e9ebf7;-webkit-text-stroke: 0.1vw #ffffff;font-weight: 700;position: absolute;top: 50%;left: 15%;transform: translateY(-50%);-webkit-transform: translateY(-50%);-moz-transform: translateY(-50%);-ms-transform: translateY(-50%);text-transform: uppercase;}
     #titleSection .wave_text .words .hide_and_show {animation: opacityChanger 5s ease infinite;margin-left: 1.5vw;}
-    #titleSection .wave_text .words:nth-child(1) {color: transparent;-webkit-text-stroke: 0.4vw #222222;}
-    #titleSection .wave_text .words:nth-child(2) {color: #6070dd;animation: wave 5s ease infinite;}
+    #titleSection .wave_text .words:nth-child(1) {color: transparent;-webkit-text-stroke: 0.1vw #ffffff;}
+    #titleSection .wave_text .words:nth-child(2) {color: #ffffff;animation: wave 5s ease infinite;}
 
-    #aboutMe {text-align: center;}
-    #aboutMe h2 {margin-bottom: 6vw;}
+    #aboutMe {text-align: center;width: 87.5vw;margin: 0 auto;}
+    #aboutMe h2 {font-weight: 700;margin-bottom: 6vw;}
     #aboutMe .profile_wrap {align-items: flex-start;}
     #aboutMe .profile_wrap .flex_l {margin-bottom: 8vw;}
     #aboutMe .profile_wrap .flex_l #ProfileImageContainer {}
@@ -204,14 +207,14 @@
     #aboutMe .profile_wrap .flex_r {position: relative;}
     #aboutMe .profile_wrap .flex_r::after {content: "";display: block;width: 10vw;height: 0.4vw;background: #222;position: absolute;left: calc(50% - 5vw);top: -4vw;}
     #aboutMe .profile_wrap .flex_r div {}
-    #aboutMe .profile_wrap .flex_r div h3 {font-size: 4.5vw;}
+    #aboutMe .profile_wrap .flex_r div h3 {font-size: 4.5vw;font-weight: 700;}
     #aboutMe .profile_wrap .flex_r div p {font-size: 3vw;font-weight: 500;align-content: end;margin-left: 1.5vw;line-height: 1.25em;}
     #aboutMe .profile_wrap .flex_r > p  {font-size: 3.5vw;line-height: 1.2em;}
-    #aboutMe .profile_wrap .flex_r > p.font_gray {color: #999999;margin-bottom: 20px;}
+    #aboutMe .profile_wrap .flex_r > p.font_gray {color: #999999;margin-bottom: 20px;font-weight: 700;}
 
     #skill {padding-top: 12.5vw;}
     #skill h3 {font-size: 6vw;font-weight: 700;line-height: 1em;margin-bottom: 6vw;}
-    #skill #skillWrap {}
+    #skill #skillWrap {-webkit-box-pack: center;-moz-box-justify-content: center;-ms-flex-pack: center;justify-content: center;}
     #skill #skillWrap .skills {}
     #skill #skillWrap .skills:not(:last-child) {margin-bottom: 5vw;}
     #skill #skillWrap .skills h4 {font-size: 4vw;line-height: 1em;margin-bottom: 2vw;}
@@ -241,17 +244,18 @@
     #project #project_slk .project_detail .detail_slk .slick-prev {position: absolute;opacity: 0;width: 0;height: 0;}
     #project #project_slk .project_detail .detail_slk .project_capture {background: #222222;width: 80vw;height: 50vw;display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-box-orient: vertical;-moz-flex-direction: column;-ms-flex-direction: column;flex-direction: column;-webkit-box-pack: center;-moz-box-justify-content: center;-ms-flex-pack: center;justify-content: center;float: left;}
     #project #project_slk .project_detail .detail_slk .project_capture img {display: block;width: 100%;height:  100%;object-fit: contain;background: #222;}
-    #project #project_slk .project_detail .detail_desc {font-size: 6vw;}
-    #project #project_slk .project_detail .detail_desc h3 {height: 8vw;margin: 6vw 0;}
+    #project #project_slk .project_detail .detail_desc {font-size: 6vw;padding: 0 10vw;}
+    #project #project_slk .project_detail .detail_desc h3 {height: 8vw;margin: 6vw 0;-webkit-box-pack: center;-moz-box-justify-content: center;-ms-flex-pack: center;justify-content: center;}
     #project #project_slk .project_detail .detail_desc h3 span {margin-right: 3vw;}
     #project #project_slk .project_detail .detail_desc h3 a {width: 4vw;height: 4vw;}
     #project #project_slk .project_detail .detail_desc h3 a img {display: block;width: 100%;height: 100%;}
-    #project #project_slk .project_detail .detail_desc p {}
+    #project #project_slk .project_detail .detail_desc p {width: 80vw;margin: 0 auto;}
+
     #project #project_slk_nav {} 
     #project #project_slk_nav .project_logo {width: 28vw;margin: 0 4vw;cursor: pointer;}
     #project #project_slk_nav .project_logo img {display: block;width: 28vw;}
     #project #project_detail_slk_prev_arrow {position: absolute;bottom: 81vw;left: 4vw;z-index: 1;cursor: pointer;}
-    #project #project_detail_slk_next_arrow {position: absolute;bottom: 81vw;right: 4vw;z-index: 1;cursor: pointer;}
+    #project #project_detail_slk_next_arrow {position: absolute;bottom: 81vw;right: 2vw;z-index: 1;cursor: pointer;}
     #project #project_detail_slk_prev_arrow img, #project #project_detail_slk_next_arrow img {height: 8vw;}
     
     #project #project_slk_next {position: absolute;bottom: 22.5vw;left: calc(50% + 16vw);z-index: 1;cursor: pointer;}
@@ -261,7 +265,7 @@
     
     #project #project_slk .project_detail .slick-dots {margin: 0;padding: 2.25vw 0;list-style-type: none;position: absolute;top: 100%;left: 50%;transform: translateX(-50%);-webkit-transform: translateX(-50%);-moz-transform: translateX(-50%);-ms-transform: translateX(-50%);display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-box-pack: center;-moz-box-justify-content: center;-ms-flex-pack: center;justify-content: center;}
     #project #project_slk .project_detail .slick-dots li {margin: 0 0.25rem;}
-    #project #project_slk .project_detail .slick-dots li button {display: block;width: 1.5vw;height: 1.5vw;padding: 0;border: none;border-radius: 100%;background-color: #D9D9D9;text-indent: -9999px;}
+    #project #project_slk .project_detail .slick-dots li button {display: block;width: 1.5vw;height: 1.5vw;padding: 0;border: none;border-radius: 100%;background-color: #ffffff;text-indent: -9999px;}
     #project #project_slk .project_detail .slick-dots li.slick-active button {background-color: #767676;}
 
     #footer {padding: 12.5vw 0 10vw;color: #fff;background: #222;text-align: center;min-width: 87.5vw;}

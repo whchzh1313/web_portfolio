@@ -15,6 +15,8 @@ if (G5_IS_MOBILE) {
 }
 
 include_once(G5_PATH.'/head.php');
+
+include_once(G5_PATH.'/inc/hd_console.php');
 ?>
     <div id="main">
         <div id="titleSection" class="primary_bg center_y_title">
