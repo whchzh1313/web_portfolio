@@ -49,10 +49,8 @@ $(document).ready(function() {
     AOS.init();
     // const $main = document.getElementById('main');
     // $main.classList.add('time_' + forecastHour);
-    const $primary_bg = document.getElementsByClassName('primary_bg');
-    Array.from($primary_bg).forEach(function (element) {
-        element.classList.add('time_' + forecastHour);
-    });
+    const _contentWrap = document.getElementById('contentWrap');
+    _contentWrap.classList.add('time_' + forecastHour);
     /**** 프로젝트 슬라이더 ****************/
     $('#project_slk').slick({
         fade: true,

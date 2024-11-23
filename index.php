@@ -24,7 +24,7 @@ include_once(G5_PATH.'/head.php');
             </div>
         </div>
         <div id="aboutMe" class="section">
-            <h2><span class="title_circle sky_circle"><span data-aos="fade-up">About me</span></span></h2>
+            <h2><span class="title_circle primary_circle"><span data-aos="fade-up">About me</span></span></h2>
             <div class="profile_wrap">
                 <div class="flex_l">
                     <div id="ProfileImageContainer">

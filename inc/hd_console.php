@@ -87,14 +87,14 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
     </div>
     <!-- weather choice -->
     <ul id="weatherSelector">
-        <li><img src="/images/icons/ic_sun.png" alt="맑음"></li>
-        <li><img src="/images/icons/ic_cloud.png" alt="구름많음"></li>
-        <li><img src="/images/icons/ic_cloudsun.png" alt="흐림"></li>
-        <li><img src="/images/icons/ic_rain.png" alt="비"></li>
-        <li><img src="/images/icons/ic_raindrop.png" alt="빗방울"></li>
-        <li><img src="/images/icons/ic_snow.png" alt="눈"></li>
-        <li><img src="/images/icons/ic_snowrain.png" alt="눈비"></li>
-        <li><img src="/images/icons/ic_snowraindrop.png" alt="눈빗방울"></li>
+        <li value="sun"><img src="/images/icons/ic_sun.png" alt="맑음"></li>
+        <li value="cloud"><img src="/images/icons/ic_cloud.png" alt="구름많음"></li>
+        <li value="cloudsun"><img src="/images/icons/ic_cloudsun.png" alt="흐림"></li>
+        <li value="rain"><img src="/images/icons/ic_rain.png" alt="비"></li>
+        <li value="raindrop"><img src="/images/icons/ic_raindrop.png" alt="빗방울"></li>
+        <li value="snow"><img src="/images/icons/ic_snow.png" alt="눈"></li>
+        <li value="snowrain"><img src="/images/icons/ic_snowrain.png" alt="눈비"></li>
+        <li value="snowraindrop"><img src="/images/icons/ic_snowraindrop.png" alt="눈빗방울"></li>
     </ul>
     <div class="select_wrap">
         <button class="select">변경</button>
@@ -106,7 +106,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
     var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
         mapOption = { 
             center: new kakao.maps.LatLng(37.4092138888888, 127.132319444444), // 지도의 중심좌표
-            level: 3 // 지도의 확대 레벨
+            level: 5 // 지도의 확대 레벨
         };	
     // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
     var map = new kakao.maps.Map(mapContainer, mapOption); 
@@ -124,29 +124,32 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
     kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
         searchDetailAddrFromCoords(mouseEvent.latLng, function(result, status) {
             if (status === kakao.maps.services.Status.OK) {
-                var detailAddr = !!result[0].road_address ? '<div>도로명주소 : ' + result[0].road_address.address_name + '</div>' : '';
-                detailAddr += '<div>지번 주소 : ' + result[0].address.address_name + '</div>';
+                // 마커 클릭시 마커만 나오고 인포 윈도우는 나오지 않게 수정했습니다.
+                // var detailAddr = !!result[0].road_address ? '<div>도로명주소 : ' + result[0].road_address.address_name + '</div>' : '';
+                // detailAddr += '<div>지번 주소 : ' + result[0].address.address_name + '</div>';
 
-                var content =   '<div class="bAddr">' +
-                                    '<span class="title">법정동 주소정보</span>' + 
-                                    detailAddr + 
-                                '</div>';
+                // var content =   '<div class="bAddr">' +
+                //                     '<span class="title">법정동 주소정보</span>' + 
+                //                     detailAddr + 
+                //                 '</div>';
 
                 // 마커를 클릭한 위치에 표시합니다 
                 marker.setPosition(mouseEvent.latLng);
                 marker.setMap(map);
                 
-                // 인포윈도우에 클릭한 위치에 대한 법정동 상세 주소정보를 표시합니다
-                infowindow.setContent(content);
-                infowindow.open(map, marker);
+                // // 인포윈도우에 클릭한 위치에 대한 법정동 상세 주소정보를 표시합니다
+                // infowindow.setContent(content);
+                // infowindow.open(map, marker);
+
+                searchAddrFromCoords(mouseEvent.latLng, displayCenterInfo);
             }   
         });
     });
 
     // 중심 좌표나 확대 수준이 변경됐을 때 지도 중심 좌표에 대한 주소 정보를 표시하도록 이벤트를 등록합니다
-    kakao.maps.event.addListener(map, 'idle', function() {
-        searchAddrFromCoords(map.getCenter(), displayCenterInfo);
-    });
+    // kakao.maps.event.addListener(map, 'idle', function() {
+    //     searchAddrFromCoords(map.getCenter(), displayCenterInfo);
+    // });
 
     function searchAddrFromCoords(coords, callback) {
         // 좌표로 행정동 주소 정보를 요청합니다
@@ -361,6 +364,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
             날씨 아이콘 클릭시 배경에서 보여주는 효과 변경
         
         */
+        
     }
 
 </script>

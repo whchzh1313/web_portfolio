@@ -21,7 +21,7 @@ include_once(G5_LIB_PATH.'/visit.lib.php');
 include_once(G5_LIB_PATH.'/connect.lib.php');
 include_once(G5_LIB_PATH.'/popular.lib.php');
 ?>
-<div id="pc">
+<div id="contentWrap">
     <div id="header">
         <div class="header_wrap flex_box flex_between flex_end">
             <h1 id="logo">HM.</h1>
