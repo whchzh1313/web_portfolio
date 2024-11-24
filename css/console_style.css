@@ -2,43 +2,89 @@
 
 /* 기본요소, 반복요소 끝 */
 
-.console_style {box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);position: fixed;right: 24px;border-radius: 4px;background: #fff;transition: opacity ease .3s;padding: 6px 12px;z-index: 10000;}
-.close_wrap {margin-bottom: 6px;text-align: end;}
-.close_wrap .close {background: url("/images/bt_close_console.png") no-repeat center center;width: 28px;height: 28px;border: 0;transition: all ease .3s;}
-.close_wrap .close:focus {background: url("/images/bt_close_console_on.png") no-repeat center center;}
-#hdConsole {top: 112px;padding: 4px;display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;font-size: 1rem;overflow: hidden;}
-#hdConsole.hide {width: fit-content;}
-#hdConsole #consolItems {width: 400px;transition:width ease 1s;}
-#hdConsole.hide #consolItems {width: 0;}
-#hdConsole #btConsoleToggle {line-height: 28px;text-align: center;width: 28px;margin-right: 2px;}
-#hdConsole #btConsoleToggle button {border: none;background: none;width: 100%;height: 100%;transform: rotate(180deg);}
-#hdConsole.hide #btConsoleToggle button {transform: rotateX(180deg);}
-#hdConsole #consolItems {display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;line-height: 28px;white-space: nowrap;}
-#hdConsole #consolItems > li {display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;padding: 0 8px;}
-#hdConsole #consolItems > li > h3 {margin-right: 8px;line-height: 28px;font-weight: 500;}
-#hdConsole #consolItems > li > h3 + p {background: #f0f0f0;font-weight: 400;border-radius: 4px;padding: 0 8px;height: 28px;cursor: pointer;}
-#hdConsole #consolItems > li #weatherIcon {padding: 0;}
-#hdConsole #consolItems > li #weatherIcon img {height: 28px;}
+@media screen and (min-width: 768px) {
+    .console_style {box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);position: fixed;right: 24px;border-radius: 4px;background: #fff;transition: opacity ease .3s;padding: 6px 12px;z-index: 10000;}
+    .close_wrap {margin-bottom: 6px;text-align: end;}
+    .close_wrap .close {background: url("/images/bt_close_console.png") no-repeat center center;width: 28px;height: 28px;border: 0;transition: all ease .3s;}
+    .close_wrap .close:focus {background: url("/images/bt_close_console_on.png") no-repeat center center;}
+    #hdConsole {top: 112px;padding: 4px;display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;font-size: 1rem;overflow: hidden;}
+    #hdConsole.hide {width: fit-content;}
+    #hdConsole #consolItems {width: 400px;transition:width ease 1s;}
+    #hdConsole.hide #consolItems {width: 0;}
+    #hdConsole #btConsoleToggle {line-height: 28px;text-align: center;width: 28px;margin-right: 2px;}
+    #hdConsole #btConsoleToggle button {border: none;background: none;width: 100%;height: 100%;transform: rotate(180deg);}
+    #hdConsole.hide #btConsoleToggle button {transform: rotateX(180deg);}
+    #hdConsole #consolItems {display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;line-height: 28px;white-space: nowrap;}
+    #hdConsole #consolItems > li {display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;padding: 0 8px;}
+    #hdConsole #consolItems > li > h3 {margin-right: 8px;line-height: 28px;font-weight: 500;}
+    #hdConsole #consolItems > li > h3 + p {background: #f0f0f0;font-weight: 400;border-radius: 4px;padding: 0 8px;height: 28px;cursor: pointer;}
+    #hdConsole #consolItems > li #weatherIcon {padding: 0;}
+    #hdConsole #consolItems > li #weatherIcon img {height: 28px;}
 
-#timeConsole {top: 160px;display: none;opacity: 0;}
-#weatherConsole {top: 160px;display: none;opacity: 0;}
-#weatherConsole #weatherSelector {display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;flex-wrap: wrap;width: 130px;gap: 6px;margin-bottom: 6px;}
-#weatherConsole #weatherSelector li {transition: box-shadow ease .3s;border-radius: 4px;}
-#weatherConsole #weatherSelector li.active {box-shadow: 0 0px 3px rgba(0, 0, 0, 0.2);}
-#weatherConsole #weatherSelector li img {width: 28px;height: 28px;}
+    #timeConsole {top: 160px;display: none;opacity: 0;}
+    #weatherConsole {top: 160px;display: none;opacity: 0;}
+    #weatherConsole #weatherSelector {display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;flex-wrap: wrap;width: 130px;gap: 6px;margin-bottom: 6px;}
+    #weatherConsole #weatherSelector li {transition: box-shadow ease .3s;border-radius: 4px;}
+    #weatherConsole #weatherSelector li.active {box-shadow: 0 0px 3px rgba(0, 0, 0, 0.2);}
+    #weatherConsole #weatherSelector li img {width: 28px;height: 28px;}
 
-#placeConsole {top: 160px;display: none;opacity: 0;}
-#placeConsole #map {width: 376px;height:288px;position:relative;overflow:hidden;margin-bottom: 6px;border-radius: 4px;}
+    #placeConsole {top: 160px;display: none;opacity: 0;}
+    #placeConsole #map {width: 376px;height:288px;position:relative;overflow:hidden;margin-bottom: 6px;border-radius: 4px;}
+    #placeConsole .desc {margin-bottom: 6px;text-align: center;}
 
-.time_wrap {text-align: center;}
-.time_wrap #upTime {cursor: pointer;}
-.time_wrap #selectTime {font-size: 1.25rem}
-.time_wrap #downTime {cursor: pointer;margin-bottom: 12px;}
-.select_wrap {text-align: center;}
-.select_wrap .select {width: 100px;line-height: 32px;color: #ffffff;background: #6070DD;border-radius: 4px;border: 0;}
-.select_wrap .select:focus {background: #46529F;}
+    .time_wrap {text-align: center;}
+    .time_wrap #upTime {cursor: pointer;}
+    .time_wrap #selectTime {font-size: 1.25rem}
+    .time_wrap #downTime {cursor: pointer;margin-bottom: 12px;}
+    .select_wrap {text-align: center;}
+    .select_wrap .select {width: 100px;line-height: 32px;color: #ffffff;background: #6070DD;border-radius: 4px;border: 0;}
+    .select_wrap .select:focus {background: #46529F;}
 
-.hAddr {position: absolute;left: 22px;top: 46px;border-radius: 4px;background: rgba(255,255,255,0.8);z-index: 1;padding: 6px;}
-.hAddr .title {font-weight: bold;display: block;}
-.hAddr #centerAddr {display: block;margin-top: 2px;font-weight: normal;}
-.bAddr {padding: 5px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
+    .hAddr {position: absolute;left: 22px;top: 46px;border-radius: 4px;background: rgba(255,255,255,0.8);z-index: 1;padding: 6px;}
+    .hAddr .title {font-weight: bold;display: block;}
+    .hAddr #centerAddr {display: block;margin-top: 2px;font-weight: normal;}
+    .bAddr {padding: 5px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
+}
+@media screen and (max-width: 767px) {
+    .console_style {box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);position: fixed;right: 24px;border-radius: 4px;background: #fff;transition: opacity ease .3s;padding: 6px 12px;z-index: 10000;}
+    .close_wrap {margin-bottom: 6px;text-align: end;}
+    .close_wrap .close {background: url("/images/bt_close_console.png") no-repeat center center;width: 28px;height: 28px;border: 0;transition: all ease .3s;}
+    .close_wrap .close:focus {background: url("/images/bt_close_console_on.png") no-repeat center center;}
+    #hdConsole {top: 16vw;padding: 4px;display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;font-size: 1rem;overflow: hidden;}
+    #hdConsole.hide {width: fit-content;}
+    #hdConsole #consolItems {width: auto;transition:width ease 1s;}
+    #hdConsole.hide #consolItems {width: 0;}
+    #hdConsole #btConsoleToggle {line-height: 1.4rem;text-align: center;width: 1.4rem;margin-right: 2px;}
+    #hdConsole #btConsoleToggle button {border: none;background: none;width: 100%;height: 100%;transform: rotate(180deg);}
+    #hdConsole.hide #btConsoleToggle button {transform: rotateX(180deg);}
+    #hdConsole #consolItems {display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;line-height: 1.4rem;white-space: nowrap;font-size: 2.375vw;}
+    #hdConsole #consolItems > li {display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;padding: 0 8px;}
+    #hdConsole #consolItems > li > h3 {margin-right: 8px;line-height: 1.4rem;font-weight: 500;}
+    #hdConsole #consolItems > li > h3 + p {background: #f0f0f0;font-weight: 400;border-radius: 4px;padding: 0 8px;height: 1.4rem;cursor: pointer;}
+    #hdConsole #consolItems > li #weatherIcon {padding: 0;}
+    #hdConsole #consolItems > li #weatherIcon img {height: 1.4rem;}
+    
+    #timeConsole {top: 160px;display: none;opacity: 0;}
+    #weatherConsole {top: 160px;display: none;opacity: 0;}
+    #weatherConsole #weatherSelector {display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;flex-wrap: wrap;width: 130px;gap: 6px;margin-bottom: 6px;}
+    #weatherConsole #weatherSelector li {transition: box-shadow ease .3s;border-radius: 4px;}
+    #weatherConsole #weatherSelector li.active {box-shadow: 0 0px 3px rgba(0, 0, 0, 0.2);}
+    #weatherConsole #weatherSelector li img {width: 28px;height: 28px;}
+    
+    #placeConsole {top: 160px;display: none;opacity: 0;}
+    #placeConsole #map {width: 80vw;height:288px;position:relative;overflow:hidden;margin-bottom: 6px;border-radius: 4px;}
+    #placeConsole .desc {margin-bottom: 6px;text-align: center;}
+    
+    .time_wrap {text-align: center;}
+    .time_wrap #upTime {cursor: pointer;}
+    .time_wrap #selectTime {font-size: 1.25rem}
+    .time_wrap #downTime {cursor: pointer;margin-bottom: 12px;}
+    .select_wrap {text-align: center;}
+    .select_wrap .select {width: 100px;line-height: 32px;color: #ffffff;background: #6070DD;border-radius: 4px;border: 0;}
+    .select_wrap .select:focus {background: #46529F;}
+    
+    .hAddr {position: absolute;left: 22px;top: 46px;border-radius: 4px;background: rgba(255,255,255,0.8);z-index: 1;padding: 6px;}
+    .hAddr .title {font-weight: bold;display: block;}
+    .hAddr #centerAddr {display: block;margin-top: 2px;font-weight: normal;}
+    .bAddr {padding: 5px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
+}

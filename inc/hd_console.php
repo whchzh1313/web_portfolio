@@ -29,6 +29,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
         <span class="title">현재 지정된 위치</span>
         <span id="centerAddr"></span>
     </div>
+    <div class="desc">위치를 변경하게되면 지정된 시간과 날씨가 초기화됩니다.</div>
     <div class="select_wrap">
         <button class="select">변경</button>
     </div>

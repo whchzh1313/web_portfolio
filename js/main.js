@@ -10,12 +10,20 @@ let todayDate = (today.getDate()).toString().padStart(2, '0');
 let nowHour = today.getHours();
 
 let weather;
-let grid_x;
-let grid_y;
+let grid_x = 62;
+let grid_y = 123;
 let data_x;
 let data_y;
 let forecastHour;
+let loadTimeHour;
 let forecastHours = ["02", "05", "08", "11", "14", "17", "20", "23"];
+
+let timeValue;
+let editTimeValue;
+
+const _contentWrap = document.getElementById('contentWrap');
+
+const _hdConsole = document.getElementById("hdConsole");
 
 const _wdSun = document.getElementById("wdSun");
 const _wdCloudsun = document.getElementById("wdCloudsun");
@@ -28,7 +36,17 @@ const _wdSnowraindrop = document.getElementById("wdSnowraindrop");
 
 const _weatherImg = document.getElementById("weatherImg");
 
-function selectTime (hour) {
+const _weatherBg = document.getElementById('weatherBg');
+
+const _placeConsole = document.getElementById("placeConsole");
+const _timeConsole = document.getElementById("timeConsole");
+const _weatherConsole = document.getElementById("weatherConsole");
+
+const _upTime = document.getElementById("upTime");
+const _downTime = document.getElementById("downTime");
+
+
+function convertTime (hour) {
     if (hour < 2) {
         // 월을 감소시킴
         todayMonth--; 
@@ -37,35 +55,36 @@ function selectTime (hour) {
             todayMonth = 12;
             todayYear--; 
         }
-        forecastHour = forecastHours[7];
+        timeValue = 7;
     } else if (hour >= 2 && hour < 5) {
-        forecastHour = forecastHours[0];
+        timeValue = 0;
     } else if (hour >= 5 && hour < 8) {
-        forecastHour = forecastHours[1];
+        timeValue = 1;
     } else if (hour >= 8 && hour < 11) {
-        forecastHour = forecastHours[2];
+        timeValue = 2;
     } else if (hour >= 11 && hour < 14) {
-        forecastHour = forecastHours[3];
+        timeValue = 3;
     } else if (hour >= 14 && hour < 17) {
-        forecastHour = forecastHours[4];
+        timeValue = 4;
     } else if (hour >= 17 && hour < 20) {
-        forecastHour = forecastHours[5];
+        timeValue = 5;
     } else if (hour >= 20 && hour < 23) {
-        forecastHour = forecastHours[6];
+        timeValue = 6;
     } else {
-        forecastHour = forecastHours[7];
+        timeValue = 7;
     }
+    forecastHour = forecastHours[timeValue];
+    loadTimeHour = forecastHour
     console.log(forecastHour);
 }
 
-selectTime(nowHour);
-
+convertTime(nowHour);
 
     /**** document init ****************/
     AOS.init();
     // const $main = document.getElementById('main');
     // $main.classList.add('time_' + forecastHour);
-    const _contentWrap = document.getElementById('contentWrap');
+    
     _contentWrap.classList.add('time_' + forecastHour);
     /**** 프로젝트 슬라이더 ****************/
     $('#project_slk').slick({
@@ -143,8 +162,6 @@ function initDetailSlick ($slk) {
 }
 // 예보된 날씨를 화면에 보여줄 컨텐츠를 생성함
 
-
-const _weatherBg = document.getElementById('weatherBg');
 function dropRain (count = 100) {
     for (let i = 0; i < count; i++) {
         const _rainDrop = document.createElement('div');
@@ -307,7 +324,7 @@ function requestForecastWeather (placeX, placeY, time) {
 
     xhr.send(); // 요청 전송
 }
-requestForecastWeather(62, 123, forecastHour);
+requestForecastWeather(grid_x, grid_y, forecastHour);
 
     // 카카오맵 load
     var mapContainer = document.getElementById("map"), // 지도를 표시할 div 
@@ -367,14 +384,9 @@ requestForecastWeather(62, 123, forecastHour);
     }
 
     // console 보이기, 숨기기
-    const _hdConsole = document.getElementById("hdConsole");
     _hdConsole.querySelector("#btConsoleToggle").addEventListener("click", function() {
         _hdConsole.classList.toggle("hide");
     });
-
-    const _placeConsole = document.getElementById("placeConsole");
-    const _timeConsole = document.getElementById("timeConsole");
-    const _weatherConsole = document.getElementById("weatherConsole");
 
     _timeConsole.querySelector(".hour").innerHTML = forecastHour;
 
@@ -389,6 +401,8 @@ requestForecastWeather(62, 123, forecastHour);
     _hdConsole.querySelector("#dateTime").addEventListener("click", function() {
         _timeConsole.classList.toggle("active");
         if (_timeConsole.classList.contains("active")) {
+            editTimeValue = timeValue;
+            document.getElementById("selectTime").querySelector(".hour").innerText = forecastHours[editTimeValue];
             fadeIn(_timeConsole);
         } else {
             fadeOut(_timeConsole);
@@ -418,20 +432,35 @@ requestForecastWeather(62, 123, forecastHour);
 
     _placeConsole.querySelector(".select").addEventListener("click", function () {
         // 지역 선택 기능
-        console.log("data_x = " + data_x);
-        console.log("data_y = " + data_y);
+        stopClock();
         setGridXY(data_x, data_y);
-        console.log("grid_x = " + grid_x);
-        console.log("grid_y = " + grid_y);
+        _contentWrap.classList.remove("time_" + forecastHour);
+        forecastHour = loadTimeHour;
+        clockTarget.innerText = forecastHour + ":00";
+        _contentWrap.classList.add("time_" + forecastHour);
         requestForecastWeather (grid_x, grid_y, forecastHour);
         _placeConsole.classList.remove("active");
         fadeOut(_placeConsole);
     });
+
     _timeConsole.querySelector(".select").addEventListener("click", function () {
         // 시간 선택 기능
-
+        stopClock();
+        _contentWrap.classList.remove("time_" + forecastHour);
+        forecastHour = forecastHours[editTimeValue];
+        clockTarget.innerText = forecastHour + ":00";
+        _contentWrap.classList.add("time_" + forecastHour);
         _timeConsole.classList.remove("active");
         fadeOut(_timeConsole);
+    });
+    _upTime.addEventListener("click", function () {
+        editTimeValue++;
+        document.getElementById("selectTime").querySelector(".hour").innerText = forecastHours[editTimeValue];
+    });
+    _downTime.addEventListener("click", function () {
+        editTimeValue--;
+        document.getElementById("selectTime").querySelector(".hour").innerText = forecastHours[editTimeValue];
+        
     });
     _weatherConsole.querySelector(".select").addEventListener("click", function () {
         // 날씨 선택 기능
@@ -486,13 +515,7 @@ requestForecastWeather(62, 123, forecastHour);
     function stopClock() {
         clearInterval(runClock);
     }
-
-    document.getElementById("upTime").addEventListener("click", function () {
-        document.getElementById("selectTime").querySelector(".hour").innerText = "클릭이 되었다";        
-    });
-    document.getElementById("downTime").addEventListener("click", function () {
-        document.getElementById("selectTime").querySelector(".hour").innerText = "클릭이 되었다";
-    });
+    
     // TODO 시간을 지정하고 그 시간에 맞춰 #main에 time_$ 클래스를 추가할 예정
     function setClock(hour, minute) {
         clockTarget.innerText = (hour < 10 ? "0" + hour : hour) + ":" + (minute < 10 ? "0" + minute : minute);

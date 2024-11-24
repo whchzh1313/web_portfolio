@@ -154,7 +154,7 @@
     #skill #skillWrap .skills.mobile_app .skill_chips li.chip:nth-child(2) {background: #E3F6DD;}
 
     #project {color: #000;}
-    #project h2 {font-weight: 700;}
+    #project h2 {font-weight: 700;font-weight: 700;}
     #project #project_slk {}
     #project #project_slk .project_detail {position: relative;}
     #project #project_slk .project_detail .detail_wrap {display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;}
@@ -184,7 +184,7 @@
     #header.scrollRun a, #header.scrollRun h1 {color: #222;}
     #header #logo {font-weight: 900;font-size: 6vw;line-height: 1em;padding: 0 2vw;}
     #header .header_wrap {text-align: right;}
-    #header .header_wrap nav {}
+    #header .header_wrap nav {display: none;}
     #header .header_wrap nav ul {height: 100%;}
     #header .header_wrap nav ul li {display: block;height: 100%;font-size: 3vw;padding: 0 8px;margin: 0 8px;align-content: center;}
     /* #header .header_wrap nav ul li:first-child {font-weight: 900;font-size: 6vw;line-height: 1em;} */
@@ -203,7 +203,7 @@
     .title_circle.sky_circle::after {background: #e9ebf7;}
     .title_circle.white_circle::after {background: #ffffff;}
 
-    #titleSection {height: 80vw;min-width: 87.5vw;position: relative;overflow: hidden;}
+    #titleSection {height: 80vh;min-width: 87.5vw;position: relative;overflow: hidden;}
     #titleSection .weather_bg {position: absolute;left: -10%;top: 0;width: 120%;height: 100%;overflow: hidden;transform: skew(-15deg);z-index: 1;}
     #titleSection .weather_bg .rain {position: absolute;width: 1px;height: 20px;background: rgba(255, 255, 255, 0.6);animation: fall 1s linear infinite;}
     #titleSection .weather_bg .snow {position: absolute;width: 12px;height: 12px;transform: translateY(-20px);border-radius: 20px;background: rgba(255, 255, 255, 0.6);animation: fall 5s linear infinite;}
@@ -215,7 +215,7 @@
     }
     @keyframes fall {
         0% { transform: translateY(-20px); }
-        100% { transform: translateY(80vw); }
+        100% { transform: translateY(80vh); }
     }
     #titleSection.center_y_title {display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-box-orient: vertical;-moz-flex-direction: column;-ms-flex-direction: column;flex-direction: column;-webkit-box-pack: center;-moz-box-justify-content: center;-ms-flex-pack: center;justify-content: center;}
     #titleSection .wave_text {position: relative;}
@@ -244,7 +244,7 @@
     #skill #skillWrap .skills {}
     #skill #skillWrap .skills:not(:last-child) {margin-bottom: 5vw;}
     #skill #skillWrap .skills h4 {font-size: 4vw;line-height: 1em;margin-bottom: 2vw;}
-    #skill #skillWrap .skills .skill_chips {}
+    #skill #skillWrap .skills .skill_chips {-webkit-box-pack: center;-moz-box-justify-content: center;-ms-flex-pack: center;justify-content: center;}
     #skill #skillWrap .skills .skill_chips li.chip {background: #e9ebf7;font-size: 3vw;line-height: 6vw;padding: 0 3vw;margin-right: 3vw;margin-bottom: 1.5vw;font-weight: 500;}
     #skill #skillWrap .skills .skill_chips li.chip:last-child {margin-right: 0;}
     #skill #skillWrap .skills.web .skill_chips li.chip:nth-child(1) {background: #F6E9DD;}
@@ -263,7 +263,7 @@
     #skill #skillWrap .skills.mobile_app .skill_chips li.chip:nth-child(2) {background: #E3F6DD;}
 
     #project {text-align: center;}
-    #project h2 {margin-bottom: 6vw;}
+    #project h2 {margin-bottom: 6vw;font-weight: 700;}
     #project #project_slk {}
     #project #project_slk .project_detail {position: relative;}
     #project #project_slk .project_detail .detail_slk {width: 80vw;height: 50vw;margin: 0 auto;position: relative;}
@@ -295,7 +295,7 @@
     #project #project_slk .project_detail .slick-dots li.slick-active button {background-color: #767676;}
 
     #footer {padding: 12.5vw 0 10vw;color: #fff;background: #222;text-align: center;min-width: 87.5vw;}
-    #footer h2 {font-size: 6vw;margin-bottom: 4vw;}
+    #footer h2 {font-size: 6vw;margin-bottom: 4vw;font-weight: 700;}
     #footer h2 span {font-size: 6vw;position: relative;z-index: 2;}
     #footer .contact_box {margin-bottom: 5vw;}
     #footer .contact_box p {font-size: 3vw;line-height: 1.2em;}
