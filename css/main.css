@@ -82,11 +82,11 @@
     #header.scrollRun {background: #ffffff;-webkit-box-shadow: #888 0px 0px 4px;-moz-box-shadow: #888 0px 0px 4px;box-shadow: #888 0px 0px 4px;}
     #header a , #header h1 {color: #fff;}
     #header.scrollRun a, #header.scrollRun h1 {color: #222;}
-    #header .header_wrap {width: 1280px;margin: 0 auto;}
-    #header .header_wrap #logo {font-weight: 900;font-size: 3.5rem;line-height: 1em;}
+    #header .header_wrap {max-width: 1280px;margin: 0 auto;}
+    #header .header_wrap #logo {font-weight: 900;font-size: 3.5rem;line-height: 1em;padding: 0 8px;}
     #header .header_wrap nav {}
     #header .header_wrap nav ul {height: 100%;}
-    #header .header_wrap nav ul li a {display: block;height: 100%;font-size: 1.5rem;font-weight: 700;padding: 0 8px;margin: 0 8px;align-content: center;}
+    #header .header_wrap nav ul li a {display: block;height: 100%;font-size: 1.3rem;font-weight: 700;padding: 0 8px;margin: 0 8px;align-content: center;}
 
     /* section */
     .section {padding: 120px 0;width: 1280px;margin: 0 auto;position: relative;}
