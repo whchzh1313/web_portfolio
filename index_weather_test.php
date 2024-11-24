@@ -28,66 +28,69 @@ include_once(G5_PATH.'/head.php');
             
         </div>
         <style>
-            #titleSection .weather_bg {
-                position: absolute;
-                left: -10%;
-                top: 0;
-                width: 120%;
-                height: 100%;
-                overflow: hidden;
-                transform: skew(-15deg);
-                z-index: 1;
-            }
+            #titleSection {position: relative;overflow: hidden;}
+            #titleSection .weather_bg {position: absolute;left: -10%;top: 0;width: 120%;height: 100%;overflow: hidden;transform: skew(-15deg);z-index: 1;}
+            #titleSection .weather_bg .rain {position: absolute;width: 1px;height: 20px;background: rgba(255, 255, 255, 0.6);animation: fall 1s linear infinite;}
+            #titleSection .weather_bg .snow {position: absolute;width: 12px;height: 12px;transform: translateY(-20px);border-radius: 20px;background: rgba(255, 255, 255, 0.6);animation: fall 5s linear infinite;}
+            #titleSection .weather_bg .cloud {position: absolute;transform: translateX(-150px);opacity: .6;animation: moveCloud 10s linear infinite;background-size: contain;background-repeat: no-repeat;}
 
-            .rain {
-                position: absolute;
-                width: 1px;
-                height: 20px;
-                background: rgba(255, 255, 255, 0.6);
-                animation: fall 1s linear infinite;
+            @keyframes moveCloud {
+                0% { transform: translateX(-150px); }
+                100% { transform: translateX(100vw); }
             }
-
-            .snow {
-                position: absolute;
-                width: 12px;
-                height: 12px;
-                transform: translateY(-20px);
-                border-radius: 20px;
-                background: rgba(255, 255, 255, 0.6);
-                animation: fall 5s linear infinite;
-            }
-
             @keyframes fall {
                 0% { transform: translateY(-20px); }
-                100% { transform: translateY(820px); } 
+                100% { transform: translateY(820px); }
             }
         </style>
         <script>
-            
-            
-            function dropRain () {
-                for (let i = 0; i < 100; i++) {
-                    const $rainDrop = document.createElement('div');
-                    $rainDrop.classList.add('rain');
-                    $rainDrop.style.left = Math.random() * window.innerWidth + 'px';
-                    $rainDrop.style.animationDuration = Math.random() * 1 + 0.5 + 's';
-                    document.getElementById('weatherBg').appendChild($rainDrop);
+            const _weatherBg = document.getElementById('weatherBg');
+            function dropRain (count = 100) {
+                for (let i = 0; i < count; i++) {
+                    const _rainDrop = document.createElement('div');
+                    _rainDrop.classList.add('rain');
+                    _rainDrop.style.left = Math.random() * _weatherBg.offsetWidth + 'px';
+                    _rainDrop.style.animationDuration = Math.random() * 1 + 0.5 + 's';
+                    _weatherBg.appendChild(_rainDrop);
                 }
             }
-            dropRain()
+            dropRain();
             
-            function dropSnow () {
-                for (let i = 0; i < 100; i++) {
-                    const $snow = document.createElement('div');
-                    $snow.classList.add('snow');
-                    $snow.style.left = Math.random() * window.innerWidth + 'px';
+            function dropSnow (count = 100) {
+                for (let i = 0; i < count; i++) {
+                    const _snow = document.createElement('div');
+                    _snow.classList.add('snow');
+                    _snow.style.left = Math.random() * _weatherBg.offsetWidth + 'px';
                     const delay = Math.random() * 3;
-                    $snow.style.animationDelay = delay + 's';
-                    $snow.style.animationDuration = Math.random() * 5 + 2 + 's';
-                    document.getElementById('weatherBg').appendChild($snow);
+                    _snow.style.animationDelay = delay + 's';
+                    _snow.style.animationDuration = Math.random() * 5 + 2 + 's';
+                    _weatherBg.appendChild(_snow);
                 }
             }
-            dropSnow()
+            dropSnow();
+
+            function moveClouds(count = 10) {
+                for (let i = 0; i < count; i++) {
+                    const _cloud = document.createElement('div');
+                    _cloud.classList.add('cloud');
+                    
+                    const cloudWidth = Math.random() * 100 + 50;
+                    const cloudHeight = cloudWidth * 0.5;
+                    
+                    _cloud.style.width = cloudWidth + 'px';
+                    _cloud.style.height = cloudHeight + 'px';
+                    _cloud.style.top = Math.random() * 100 + 'px';
+
+                    const cloudIndex = Math.floor(Math.random() * 5);
+                    _cloud.style.backgroundImage = 'url(/images/clouds/cloud_' + cloudIndex + '.png)';
+
+                    const delay = Math.random() * 3;
+                    _cloud.style.animationDelay = delay + 's';
+                    _cloud.style.animationDuration = Math.random() * 15 + 10 + 's';
+                    _weatherBg.appendChild(_cloud);
+                }
+            }
+            moveClouds();
         </script>
     </div>
 <?php

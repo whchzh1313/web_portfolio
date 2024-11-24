@@ -2,7 +2,6 @@
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 ?>
 <link rel="stylesheet" href="/css/console_style.css">
-<script src="/js/main_console.js"></script>
 <div id="hdConsole" class="console_style">
     <div id="btConsoleToggle"><button type="button"><img src="/images/hd_console_btn.png" alt=""></button></div>
     <ul id="consolItems">
@@ -16,7 +15,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
         </li>
         <li>
             <h3>Weather</h3>
-            <p id="weatherIcon"><img src="/images/icons/ic_cloudsun.png" alt=""></p>
+            <p id="weatherIcon"><img id="weatherImg" src="/images/icons/ic_cloudsun.png" alt=""></p>
         </li>
     </ul>
 </div>
@@ -60,14 +59,14 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
     </div>
     <!-- weather choice -->
     <ul id="weatherSelector">
-        <li value="sun"><img src="/images/icons/ic_sun.png" alt="맑음"></li>
-        <li value="cloud"><img src="/images/icons/ic_cloud.png" alt="구름많음"></li>
-        <li value="cloudsun"><img src="/images/icons/ic_cloudsun.png" alt="흐림"></li>
-        <li value="rain"><img src="/images/icons/ic_rain.png" alt="비"></li>
-        <li value="raindrop"><img src="/images/icons/ic_raindrop.png" alt="빗방울"></li>
-        <li value="snow"><img src="/images/icons/ic_snow.png" alt="눈"></li>
-        <li value="snowrain"><img src="/images/icons/ic_snowrain.png" alt="눈비"></li>
-        <li value="snowraindrop"><img src="/images/icons/ic_snowraindrop.png" alt="눈빗방울"></li>
+        <li id="wdSun" value="sun"><img src="/images/icons/ic_sun.png" alt="맑음"></li>
+        <li id="wdCloud" value="cloud"><img src="/images/icons/ic_cloud.png" alt="구름많음"></li>
+        <li id="wdCloudsun" value="cloudsun"><img src="/images/icons/ic_cloudsun.png" alt="흐림"></li>
+        <li id="wdRain" value="rain"><img src="/images/icons/ic_rain.png" alt="비"></li>
+        <li id="wdRaindrop" value="raindrop"><img src="/images/icons/ic_raindrop.png" alt="빗방울"></li>
+        <li id="wdSnow" value="snow"><img src="/images/icons/ic_snow.png" alt="눈"></li>
+        <li id="wdSnowrain" value="snowrain"><img src="/images/icons/ic_snowrain.png" alt="눈비"></li>
+        <li id="wdSnowraindrop" value="snowraindrop"><img src="/images/icons/ic_snowraindrop.png" alt="눈빗방울"></li>
     </ul>
     <div class="select_wrap">
         <button class="select">변경</button>

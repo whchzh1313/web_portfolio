@@ -20,6 +20,7 @@ include_once(G5_PATH.'/inc/hd_console.php');
 ?>
     <div id="main">
         <div id="titleSection" class="primary_bg center_y_title">
+            <div id="weatherBg" class="weather_bg"></div>
             <div class="section wave_text" data-aos="fade">
                 <p class="words wave" aria-hidden="true">이화민<br />웹 개발자<br />포트폴리오</p>
                 <p class="words">이화민<br />웹 개발자<br />포트폴리오</p>

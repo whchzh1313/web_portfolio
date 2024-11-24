@@ -99,6 +99,19 @@
     #footer > p {font-size: 1rem;font-weight: 400;}
 
     #titleSection {height: 800px;min-width: 1280px;}
+    #titleSection .weather_bg {position: absolute;left: -10%;top: 0;width: 120%;height: 100%;overflow: hidden;transform: skew(-15deg);z-index: 1;}
+    #titleSection .weather_bg .rain {position: absolute;width: 1px;height: 20px;background: rgba(255, 255, 255, 0.6);animation: fall 1s linear infinite;}
+    #titleSection .weather_bg .snow {position: absolute;width: 12px;height: 12px;transform: translateY(-20px);border-radius: 20px;background: rgba(255, 255, 255, 0.6);animation: fall 5s linear infinite;}
+    #titleSection .weather_bg .cloud {position: absolute;transform: translateX(-150px);opacity: .6;animation: moveCloud 10s linear infinite;background-size: contain;background-repeat: no-repeat;}
+
+    @keyframes moveCloud {
+        0% { transform: translateX(-150px); }
+        100% { transform: translateX(100vw); }
+    }
+    @keyframes fall {
+        0% { transform: translateY(-20px); }
+        100% { transform: translateY(820px); }
+    }
     #titleSection.center_y_title {display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-box-orient: vertical;-moz-flex-direction: column;-ms-flex-direction: column;flex-direction: column;-webkit-box-pack: center;-moz-box-justify-content: center;-ms-flex-pack: center;justify-content: center;}
     #titleSection .wave_text {position: relative;}
     #titleSection .wave_text .words {font-size: 8rem;color: #e9ebf7;-webkit-text-stroke: 1px #fff;font-weight: 700;position: absolute;top: 50%;transform: translateY(-50%);-webkit-transform: translateY(-50%);-moz-transform: translateY(-50%);-ms-transform: translateY(-50%);text-transform: uppercase;line-height: 1em;}
@@ -190,7 +203,20 @@
     .title_circle.sky_circle::after {background: #e9ebf7;}
     .title_circle.white_circle::after {background: #ffffff;}
 
-    #titleSection {height: 80vw;min-width: 87.5vw;}
+    #titleSection {height: 80vw;min-width: 87.5vw;position: relative;overflow: hidden;}
+    #titleSection .weather_bg {position: absolute;left: -10%;top: 0;width: 120%;height: 100%;overflow: hidden;transform: skew(-15deg);z-index: 1;}
+    #titleSection .weather_bg .rain {position: absolute;width: 1px;height: 20px;background: rgba(255, 255, 255, 0.6);animation: fall 1s linear infinite;}
+    #titleSection .weather_bg .snow {position: absolute;width: 12px;height: 12px;transform: translateY(-20px);border-radius: 20px;background: rgba(255, 255, 255, 0.6);animation: fall 5s linear infinite;}
+    #titleSection .weather_bg .cloud {position: absolute;transform: translateX(-150px);opacity: .6;animation: moveCloud 10s linear infinite;background-size: contain;background-repeat: no-repeat;}
+
+    @keyframes moveCloud {
+        0% { transform: translateX(-150px); }
+        100% { transform: translateX(100vw); }
+    }
+    @keyframes fall {
+        0% { transform: translateY(-20px); }
+        100% { transform: translateY(80vw); }
+    }
     #titleSection.center_y_title {display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-box-orient: vertical;-moz-flex-direction: column;-ms-flex-direction: column;flex-direction: column;-webkit-box-pack: center;-moz-box-justify-content: center;-ms-flex-pack: center;justify-content: center;}
     #titleSection .wave_text {position: relative;}
     #titleSection .wave_text .words {font-size: 12vw;line-height: 1.2em;color: #e9ebf7;-webkit-text-stroke: 0.1vw #ffffff;font-weight: 700;position: absolute;top: 50%;left: 15%;transform: translateY(-50%);-webkit-transform: translateY(-50%);-moz-transform: translateY(-50%);-ms-transform: translateY(-50%);text-transform: uppercase;}

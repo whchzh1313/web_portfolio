@@ -16,7 +16,7 @@
 #hdConsole #consolItems {display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;line-height: 28px;white-space: nowrap;}
 #hdConsole #consolItems > li {display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;padding: 0 8px;}
 #hdConsole #consolItems > li > h3 {margin-right: 8px;line-height: 28px;font-weight: 500;}
-#hdConsole #consolItems > li > h3 + p {background: #E9EBF7;font-weight: 400;border-radius: 4px;padding: 0 8px;height: 28px;cursor: pointer;}
+#hdConsole #consolItems > li > h3 + p {background: #f0f0f0;font-weight: 400;border-radius: 4px;padding: 0 8px;height: 28px;cursor: pointer;}
 #hdConsole #consolItems > li #weatherIcon {padding: 0;}
 #hdConsole #consolItems > li #weatherIcon img {height: 28px;}
 
