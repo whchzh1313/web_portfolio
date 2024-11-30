@@ -88,18 +88,15 @@
     #header .header_wrap nav ul {height: 100%;}
     #header .header_wrap nav ul li a {display: block;height: 100%;font-size: 1.3rem;font-weight: 700;padding: 0 8px;margin: 0 8px;align-content: center;}
 
-    /* section */
-    .section {padding: 120px 0;width: 1280px;margin: 0 auto;position: relative;}
-
-    #footer {padding: 100px 0 80px;color: #fff;background: #222;text-align: center;min-width: 1280px;}
+    #footer {padding: 100px 0 80px;color: #fff;background: #222;text-align: center;min-width: 768px;}
     #footer h2 {font-size: 3rem;margin-bottom: 32px;font-weight: 700;}
     #footer h2 span {font-size: 3rem;position: relative;z-index: 2;}
     #footer .contact_box {margin-bottom: 40px;}
     #footer .contact_box p {font-size: 1.5rem;line-height: 1.2em;}
     #footer > p {font-size: 1rem;font-weight: 400;}
 
-    #titleSection {height: 800px;min-width: 1280px;}
-    #titleSection .weather_bg {position: absolute;left: -10%;top: 0;width: 120%;height: 100%;overflow: hidden;transform: skew(-15deg);z-index: 1;}
+    #titleSection {height: 800px;min-width: 768px;position: relative;overflow: hidden;}
+    #titleSection .weather_bg {position: absolute;left: -10%;top: 0;width: 120%;height: 100%;overflow: hidden;transform: skew(-7deg);z-index: 1;}
     #titleSection .weather_bg .rain {position: absolute;width: 1px;height: 20px;background: rgba(255, 255, 255, 0.6);animation: fall 1s linear infinite;}
     #titleSection .weather_bg .snow {position: absolute;width: 12px;height: 12px;transform: translateY(-20px);border-radius: 20px;background: rgba(255, 255, 255, 0.6);animation: fall 5s linear infinite;}
     #titleSection .weather_bg .cloud {position: absolute;transform: translateX(-150px);opacity: .6;animation: moveCloud 10s linear infinite;background-size: contain;background-repeat: no-repeat;}
@@ -118,7 +115,7 @@
     #titleSection .wave_text .words:nth-child(1) {color: transparent;-webkit-text-stroke: 1px #fff;}
     #titleSection .wave_text .words:nth-child(2) {color: #ffffff;animation: wave 5s ease infinite;}
 
-    #aboutMe {}
+    #aboutMe {padding: 120px;}
     #aboutMe h2 {font-weight: 700;}
     #aboutMe .profile_wrap {display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;align-items: flex-start;}
     #aboutMe .profile_wrap .flex_l {}
@@ -152,29 +149,6 @@
     #skill #skillWrap .skills.version .skill_chips li.chip:nth-child(2) {background: #F6E9DD;}
     #skill #skillWrap .skills.mobile_app .skill_chips li.chip:nth-child(1) {background: #DDEBF6;}
     #skill #skillWrap .skills.mobile_app .skill_chips li.chip:nth-child(2) {background: #E3F6DD;}
-
-    #project {color: #000;}
-    #project h2 {font-weight: 700;font-weight: 700;}
-    #project #project_slk {}
-    #project #project_slk .project_detail {position: relative;}
-    #project #project_slk .project_detail .detail_wrap {display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;}
-    #project #project_slk .project_detail .detail_wrap .detail_slk {width: 640px;height: 440px;margin-right: 120px;position: relative;}
-    #project #project_slk .project_detail .detail_wrap .detail_slk .slick-prev {position: absolute;opacity: 0;width: 0;height: 0;}
-    #project #project_slk .project_detail .detail_wrap .detail_slk .project_capture {background: #222222;width: 640px;height: 400px;display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-box-orient: vertical;-moz-flex-direction: column;-ms-flex-direction: column;flex-direction: column;-webkit-box-pack: center;-moz-box-justify-content: center;-ms-flex-pack: center;justify-content: center;float: left;}
-    #project #project_slk .project_detail .detail_wrap .detail_slk .project_capture img {display: block;width: 100%;height:  100%;object-fit: contain;background: #222;}
-    #project #project_slk .project_detail .detail_wrap .detail_desc {font-size: 48px;}
-    #project #project_slk .project_detail .detail_wrap .detail_desc h3 span {margin-right: 16px;font-weight: 700;}
-    #project #project_slk .project_detail .detail_wrap .detail_desc p {}
-    #project #project_slk_nav {} 
-    #project #project_slk_nav .project_logo {width: 240px;margin: 0 10px;cursor: pointer;}
-    #project #project_detail_slk_next_arrow {position: absolute;bottom: 548px;left: 684px;z-index: 1;cursor: pointer;}
-    #project #project_slk_next {position: absolute;bottom: 208px;left: calc(100% + 24px);z-index: 1;cursor: pointer;}
-    #project #project_slk_prev {position: absolute;bottom: 208px;right: calc(100% + 24px);z-index: 1;cursor: pointer;}
-
-    #project #project_slk .project_detail .slick-dots {margin: 0;padding: 1rem 0;list-style-type: none;position: absolute;bottom: 0;left: 50%;transform: translateX(-50%);-webkit-transform: translateX(-50%);-moz-transform: translateX(-50%);-ms-transform: translateX(-50%);display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-box-pack: center;-moz-box-justify-content: center;-ms-flex-pack: center;justify-content: center;}
-    #project #project_slk .project_detail .slick-dots li {margin: 0 0.25rem;}
-    #project #project_slk .project_detail .slick-dots li button {display: block;width: 0.5rem;height: 0.5rem;padding: 0;border: none;border-radius: 100%;background-color: #ffffff;text-indent: -9999px;}
-    #project #project_slk .project_detail .slick-dots li.slick-active button {background-color: #767676;}
 }
 @media screen and (max-width: 767px) {
     /* mobile_header */
@@ -204,7 +178,7 @@
     .title_circle.white_circle::after {background: #ffffff;}
 
     #titleSection {height: 80vh;min-width: 87.5vw;position: relative;overflow: hidden;}
-    #titleSection .weather_bg {position: absolute;left: -10%;top: 0;width: 120%;height: 100%;overflow: hidden;transform: skew(-15deg);z-index: 1;}
+    #titleSection .weather_bg {position: absolute;left: -10%;top: 0;width: 120%;height: 100%;overflow: hidden;transform: skew(-7deg);z-index: 1;}
     #titleSection .weather_bg .rain {position: absolute;width: 1px;height: 20px;background: rgba(255, 255, 255, 0.6);animation: fall 1s linear infinite;}
     #titleSection .weather_bg .snow {position: absolute;width: 12px;height: 12px;transform: translateY(-20px);border-radius: 20px;background: rgba(255, 255, 255, 0.6);animation: fall 5s linear infinite;}
     #titleSection .weather_bg .cloud {position: absolute;transform: translateX(-150px);opacity: .6;animation: moveCloud 10s linear infinite;background-size: contain;background-repeat: no-repeat;}
@@ -262,6 +236,45 @@
     #skill #skillWrap .skills.mobile_app .skill_chips li.chip:nth-child(1) {background: #DDEBF6;}
     #skill #skillWrap .skills.mobile_app .skill_chips li.chip:nth-child(2) {background: #E3F6DD;}
 
+    #footer {padding: 12.5vw 0 10vw;color: #fff;background: #222;text-align: center;min-width: 87.5vw;}
+    #footer h2 {font-size: 6vw;margin-bottom: 4vw;font-weight: 700;}
+    #footer h2 span {font-size: 6vw;position: relative;z-index: 2;}
+    #footer .contact_box {margin-bottom: 5vw;}
+    #footer .contact_box p {font-size: 3vw;line-height: 1.2em;}
+    #footer > p {font-size: 2.5vw;font-weight: 400;}
+}
+
+/* TABLIT */
+@media screen and (min-width: 1280px) {
+    /* section */
+    .section {padding: 120px 0;width: 1280px;margin: 0 auto;position: relative;}
+
+    #project {color: #000;}
+    #project h2 {font-weight: 700;font-weight: 700;}
+    #project #project_slk {}
+    #project #project_slk .project_detail {position: relative;}
+    #project #project_slk .project_detail .detail_wrap {display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;}
+    #project #project_slk .project_detail .detail_wrap .detail_slk {width: 640px;height: 440px;margin-right: 120px;position: relative;}
+    #project #project_slk .project_detail .detail_wrap .detail_slk .slick-prev {position: absolute;opacity: 0;width: 0;height: 0;}
+    #project #project_slk .project_detail .detail_wrap .detail_slk .project_capture {background: #222222;width: 640px;height: 400px;display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-box-orient: vertical;-moz-flex-direction: column;-ms-flex-direction: column;flex-direction: column;-webkit-box-pack: center;-moz-box-justify-content: center;-ms-flex-pack: center;justify-content: center;float: left;}
+    #project #project_slk .project_detail .detail_wrap .detail_slk .project_capture img {display: block;width: 100%;height:  100%;object-fit: contain;background: #222;}
+    #project #project_slk .project_detail .detail_wrap .detail_desc {font-size: 48px;}
+    #project #project_slk .project_detail .detail_wrap .detail_desc h3 span {margin-right: 16px;font-weight: 700;}
+    #project #project_slk .project_detail .detail_wrap .detail_desc p {}
+    #project #project_slk_nav {} 
+    #project #project_slk_nav .project_logo {width: 240px;margin: 0 10px;cursor: pointer;}
+    #project #project_detail_slk_next_arrow {position: absolute;bottom: 548px;left: 684px;z-index: 1;cursor: pointer;}
+    #project #project_slk_next {position: absolute;bottom: 208px;left: calc(100% + 24px);z-index: 1;cursor: pointer;}
+    #project #project_slk_prev {position: absolute;bottom: 208px;right: calc(100% + 24px);z-index: 1;cursor: pointer;}
+
+    #project #project_slk .project_detail .slick-dots {margin: 0;padding: 1rem 0;list-style-type: none;position: absolute;bottom: 0;left: 50%;transform: translateX(-50%);-webkit-transform: translateX(-50%);-moz-transform: translateX(-50%);-ms-transform: translateX(-50%);display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-box-pack: center;-moz-box-justify-content: center;-ms-flex-pack: center;justify-content: center;}
+    #project #project_slk .project_detail .slick-dots li {margin: 0 0.25rem;}
+    #project #project_slk .project_detail .slick-dots li button {display: block;width: 0.5rem;height: 0.5rem;padding: 0;border: none;border-radius: 100%;background-color: #ffffff;text-indent: -9999px;}
+    #project #project_slk .project_detail .slick-dots li.slick-active button {background-color: #767676;}
+}
+@media screen and (max-width: 1279px) {
+    /* section */
+
     #project {text-align: center;}
     #project h2 {margin-bottom: 6vw;font-weight: 700;}
     #project #project_slk {}
@@ -293,11 +306,9 @@
     #project #project_slk .project_detail .slick-dots li {margin: 0 0.25rem;}
     #project #project_slk .project_detail .slick-dots li button {display: block;width: 1.5vw;height: 1.5vw;padding: 0;border: none;border-radius: 100%;background-color: #ffffff;text-indent: -9999px;}
     #project #project_slk .project_detail .slick-dots li.slick-active button {background-color: #767676;}
-
-    #footer {padding: 12.5vw 0 10vw;color: #fff;background: #222;text-align: center;min-width: 87.5vw;}
-    #footer h2 {font-size: 6vw;margin-bottom: 4vw;font-weight: 700;}
-    #footer h2 span {font-size: 6vw;position: relative;z-index: 2;}
-    #footer .contact_box {margin-bottom: 5vw;}
-    #footer .contact_box p {font-size: 3vw;line-height: 1.2em;}
-    #footer > p {font-size: 2.5vw;font-weight: 400;}
+}
+/* 모바일과 태블릿의 사이 */
+@media screen and (min-width: 769px) and (max-width: 1279px) {
+    .section {padding: 120px 0;margin: 0 auto;position: relative;}
+    #titleSection .section {width: 100%;padding: 0 40px;}
 }

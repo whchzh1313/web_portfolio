@@ -21,6 +21,8 @@ let forecastHours = ["02", "05", "08", "11", "14", "17", "20", "23"];
 let timeValue;
 let editTimeValue;
 
+let selectPlace;
+
 const _contentWrap = document.getElementById('contentWrap');
 
 const _hdConsole = document.getElementById("hdConsole");
@@ -237,12 +239,14 @@ function requestForecastWeather (placeX, placeY, time) {
                                         switch (nowSky.fcstValue) {
                                             case '1': // 맑음
                                                 console.log('여기는 맑음');
+                                                clearWeather();
                                                 weatherSelectorRemoveActive();
                                                 _weatherImg.src = "/images/icons/ic_sun.png";
                                                 _wdSun.classList.add("active");
                                                 break
                                             case '3': // 구름많음
                                                 console.log('여기는 구름많음');
+                                                clearWeather();
                                                 weatherSelectorRemoveActive();
                                                 _weatherImg.src = "/images/icons/ic_cloudsun.png";
                                                 _wdCloudsun.classList.add("active");
@@ -250,6 +254,7 @@ function requestForecastWeather (placeX, placeY, time) {
                                                 break
                                             case '4': // 흐림
                                                 console.log('여기는 흐림');
+                                                clearWeather();
                                                 weatherSelectorRemoveActive();
                                                 _weatherImg.src = "/images/icons/ic_cloud.png";
                                                 _wdCloud.classList.add("active");
@@ -263,6 +268,7 @@ function requestForecastWeather (placeX, placeY, time) {
                                     break
                                 case '1': // 비
                                     console.log('여기는 비');
+                                    clearWeather();
                                     weatherSelectorRemoveActive();
                                     _weatherImg.src = "/images/icons/ic_rain.png";
                                     _wdRain.classList.add("active");
@@ -270,6 +276,7 @@ function requestForecastWeather (placeX, placeY, time) {
                                     break
                                 case '2': // 눈비
                                     console.log('여기는 눈비');
+                                    clearWeather();
                                     weatherSelectorRemoveActive();
                                     _weatherImg.src = "/images/icons/ic_snowrain.png";
                                     _wdSnowrain.classList.add("active");
@@ -278,6 +285,7 @@ function requestForecastWeather (placeX, placeY, time) {
                                     break
                                 case '3': // 눈
                                     console.log('여기는 눈');
+                                    clearWeather();
                                     weatherSelectorRemoveActive();
                                     _weatherImg.src = "/images/icons/ic_snow.png";
                                     _wdSnow.classList.add("active");
@@ -285,6 +293,7 @@ function requestForecastWeather (placeX, placeY, time) {
                                     break
                                 case '5': // 빗방울
                                     console.log('여기는 빗방울');
+                                    clearWeather();
                                     weatherSelectorRemoveActive();
                                     _weatherImg.src = "/images/icons/ic_raindrop.png";
                                     _wdRaindrop.classList.add("active");
@@ -292,6 +301,7 @@ function requestForecastWeather (placeX, placeY, time) {
                                     break
                                 case '6': // 빗방울눈날림
                                     console.log('여기는 빗방울눈날림');
+                                    clearWeather();
                                     weatherSelectorRemoveActive();
                                     _weatherImg.src = "/images/icons/ic_snowraindrop.png";
                                     _wdSnowraindrop.classList.add("active");
@@ -300,6 +310,7 @@ function requestForecastWeather (placeX, placeY, time) {
                                     break
                                 case '7': // 눈날림
                                     console.log('여기는 눈날림 하지만 눈과 동일');
+                                    clearWeather();
                                     weatherSelectorRemoveActive();
                                     _weatherImg.src = "/images/icons/ic_snow.png";
                                     _wdSnow.classList.add("active");
@@ -376,6 +387,7 @@ requestForecastWeather(grid_x, grid_y, forecastHour);
                 // 행정동의 region_type 값은 'H' 이므로
                 if (result[i].region_type === 'H') {
                     infoDiv.innerHTML = result[i].address_name;
+                    selectPlace = result[i].address_name;
                     searchAdministrativeArea(result[i].address_name);
                     break;
                 }
@@ -434,6 +446,7 @@ requestForecastWeather(grid_x, grid_y, forecastHour);
         // 지역 선택 기능
         stopClock();
         setGridXY(data_x, data_y);
+        _hdConsole.querySelector("#placeName").innerText = selectPlace;
         _contentWrap.classList.remove("time_" + forecastHour);
         forecastHour = loadTimeHour;
         clockTarget.innerText = forecastHour + ":00";
