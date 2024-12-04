@@ -24,13 +24,19 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 <div id="contentWrap">
     <div id="header">
         <div class="header_wrap flex_box flex_between flex_end">
-            <h1 id="logo">HM.</h1>
+            <div id="playground"></div>
+            <h1 id="logo" class="scroll_top">HM.</h1>
             <nav>
-                <ul class="flex_box">
-                    <li><a href="#aboutMe">About Me</a></li>
-                    <li><a href="#skill">Skill</a></li>
-                    <li><a href="#project">Project</a></li>
-                    <li><a href="#footer">Contact</a></li>
+                <div class="mobile_menu_trigger">
+	                <span> </span>
+	                <span> </span>
+	                <span> </span>
+                </div>
+                <ul id="gnb">
+                    <li id="moveAboutMe">About Me</li>
+                    <li id="moveSkill">Skill</li>
+                    <li id="moveProject">Project</li>
+                    <li id="moveFooter">Contact</li>
                 </ul>
             </nav>
         </div>

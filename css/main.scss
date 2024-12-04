@@ -1,5 +1,7 @@
 @charset "utf-8";
 
+@use "common" as common;
+
 /* 기본요소, 반복요소 끝 */
 
 .time_02 .primary_bg {
@@ -188,11 +190,15 @@
   align-items: end;
 }
 
+.scroll_top {
+  cursor: pointer;
+}
 /* title_circle */
 
 .title_circle {
   position: relative;
   font-size: 3rem;
+  font-weight: 700;
   line-height: 1em;
   margin-bottom: 40px;
   display: inline-block;
@@ -418,31 +424,26 @@
   /* pc_header */
 
   #header {
-    padding: 16px 0;
+    padding: 32px 0;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 10000;
-    -webkit-transition: all ease 0.3s;
-    -moz-transition: all ease 0.3s;
-    -o-transition: all ease 0.3s;
-    transition: all ease 0.3s;
+    z-index: 100000;
+    @include common.transition;
 
     &.scrollRun {
       background: #ffffff;
-      -webkit-box-shadow: #888 0px 0px 4px;
-      -moz-box-shadow: #888 0px 0px 4px;
-      box-shadow: #888 0px 0px 4px;
+      @include common.content_shadow;
     }
 
-    a,
+    li,
     h1 {
       color: #fff;
     }
 
     &.scrollRun {
-      a,
+      li,
       h1 {
         color: #222;
       }
@@ -453,23 +454,33 @@
       margin: 0 auto;
 
       #logo {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
         font-weight: 900;
         font-size: 3.5rem;
         line-height: 1em;
         padding: 0 8px;
       }
 
-      nav ul {
-        height: 100%;
-
-        li a {
-          display: block;
+      nav {
+        .mobile_menu_trigger {
+          display: none;
+        }
+        ul#gnb {
+          @include common.display_flex;
           height: 100%;
-          font-size: 1.3rem;
-          font-weight: 700;
-          padding: 0 8px;
-          margin: 0 8px;
-          align-content: center;
+
+          li {
+            display: block;
+            height: 100%;
+            font-size: 1.15rem;
+            font-weight: 700;
+            padding: 0 8px;
+            align-content: center;
+            cursor: pointer;
+          }
         }
       }
     }
@@ -619,7 +630,7 @@
   }
 
   #aboutMe {
-    padding: 120px;
+    padding: 120px 50px;
 
     h2 {
       font-weight: 700;
@@ -635,11 +646,12 @@
       .flex_l #ProfileImageContainer {
         img {
           width: 220px;
+          @include common.border_radius_12;
         }
       }
 
       .flex_r {
-        margin-left: 120px;
+        margin-left: 80px;
         padding-left: 40px;
         border-left: 1px solid #222;
 
@@ -664,7 +676,7 @@
         }
 
         > p {
-          font-size: 1.5rem;
+          font-size: 1.25rem;
           line-height: 1.2em;
 
           &.font_gray {
@@ -788,10 +800,7 @@
     top: 0;
     right: 0;
     z-index: 10000;
-    -webkit-transition: all ease 0.3s;
-    -moz-transition: all ease 0.3s;
-    -o-transition: all ease 0.3s;
-    transition: all ease 0.3s;
+    @include common.transition;
 
     a,
     h1 {
@@ -800,40 +809,113 @@
 
     &.scrollRun {
       background: #ffffff;
-      -webkit-box-shadow: #888 0px 0px 4px;
-      -moz-box-shadow: #888 0px 0px 4px;
-      box-shadow: #888 0px 0px 4px;
+      @include common.content_shadow;
 
       a,
       h1 {
         color: #222;
       }
+      .header_wrap {
+        nav {
+          .mobile_menu_trigger {
+            span {
+              background-color: #222;
+            }
+          }
+        }
+      }
     }
-
+    #playground {
+      width: 36px;
+      margin-left: 16px;
+    }
     #logo {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
       font-weight: 900;
-      font-size: 6vw;
+      font-size: 2rem;
       line-height: 1em;
       padding: 0 2vw;
     }
 
     .header_wrap {
-      text-align: right;
 
       nav {
-        display: none;
+        
+        .mobile_menu_trigger,
+        .mobile_menu_trigger span {
+          cursor: pointer;
+          display: inline-block;
+          transition: all 0.4s;
+          box-sizing: border-box;
+        }
+        .mobile_menu_trigger {
+          position: relative;
+          z-index: 10;
+          width: 36px;
+          height: 30px;
+          margin-right: 16px;
+          span {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: #fff;
+            border-radius: 4px;
+            &:nth-of-type(1) {
+              top: 0;
+            }
+            &:nth-of-type(2) {
+              top: 13px;
+            }
+            &:nth-of-type(3) {
+              bottom: 0;
+            }
+          }
+        }
+        .mobile_menu_trigger.active {
+          span {
+            background-color: #222;
+            &:nth-of-type(1) {
+              -webkit-transform: translateY(13px) rotate(-315deg);
+              transform: translateY(13px) rotate(-315deg);
+            }
 
-        ul {
+            &:nth-of-type(2) {
+              opacity: 0;
+            }
+
+            &:nth-of-type(3) {
+              -webkit-transform: translateY(-13px) rotate(315deg);
+              transform: translateY(-13px) rotate(315deg);
+            }
+          }
+        }
+        ul#gnb {
+          @include common.transition;
+          @include common.display_flex;
+          @include common.flex_column;
+          @include common.flex_center;
+          position: fixed;
+          right: 0;
+          top: 0;
+          width: 100%;
           height: 100%;
-
+          clip-path: circle(0% at 95% 5%);
+          background: #fff;
           li {
             display: block;
-            height: 100%;
-            font-size: 3vw;
-            padding: 0 8px;
-            margin: 0 8px;
-            align-content: center;
+            font-size: 2.5rem;
+            line-height: 1.5em;
+            text-align: center;
+            font-weight: 700;
+            cursor: pointer;
           }
+        }
+        ul#gnb.active {
+          clip-path: circle(150% at 95% 5%);
         }
       }
     }
@@ -1044,6 +1126,7 @@
 
         #ProfileImageContainer img {
           width: 40vw;
+          @include common.border_radius_12;
         }
       }
 
@@ -1247,7 +1330,7 @@
   /* section */
 
   .section {
-    padding: 120px 0;
+    padding: 120px 50px;
     width: 1280px;
     margin: 0 auto;
     position: relative;
@@ -1257,7 +1340,6 @@
     color: #000;
 
     h2 {
-      font-weight: 700;
       font-weight: 700;
     }
 
@@ -1271,7 +1353,7 @@
         display: flex;
 
         .detail_slk {
-          width: 640px;
+          width: 590px;
           height: 440px;
           margin-right: 120px;
           position: relative;
@@ -1284,7 +1366,7 @@
           }
 
           .project_capture {
-            width: 640px;
+            width: 590px;
             height: 400px;
             display: -webkit-box;
             display: -ms-flexbox;

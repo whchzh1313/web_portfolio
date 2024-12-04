@@ -47,6 +47,21 @@ document.addEventListener("DOMContentLoaded", function () {
   const _upTime = document.getElementById("upTime");
   const _downTime = document.getElementById("downTime");
 
+  const _aboutMe = document.getElementById("aboutMe");
+  let aboutMeTop = _aboutMe.getBoundingClientRect().top + window.scrollY - 65;
+  const _skills = document.getElementById("skills");
+  let skillsTop = _skills.getBoundingClientRect().top + window.scrollY - 65;
+  const _projects = document.getElementById("projects");
+  let projectsTop = _projects.getBoundingClientRect().top + window.scrollY - 65;
+  const _footer = document.getElementById("projects");
+  let footerTop = _footer.getBoundingClientRect().top + window.scrollY - 65;
+
+  window.addEventListener("resize", function () {
+    aboutMeTop = _aboutMe.getBoundingClientRect().top + window.scrollY - 65;
+    skillsTop = _skills.getBoundingClientRect().top + window.scrollY - 65;
+    projectsTop = _projects.getBoundingClientRect().top + window.scrollY - 65;
+    footerTop = _footer.getBoundingClientRect().top + window.scrollY - 65;
+  });
   function convertTime(hour) {
     if (hour < 2) {
       // 월을 감소시킴
@@ -82,6 +97,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /**** document init ****************/
   AOS.init();
+
+  window.addEventListener("resize", function () {
+    AOS.refresh();
+  });
   // const $main = document.getElementById('main');
   // $main.classList.add('time_' + forecastHour);
 
@@ -119,6 +138,8 @@ document.addEventListener("DOMContentLoaded", function () {
       initDetailSlick($(this));
     }
   });
+  /**** 프로젝트 슬라이더 끝 ****************/
+
   // 클릭이벤트가 초기화가 문제가 생겨서 이벤트 삭제 후 다시 등록.
   $("#project_detail_slk_next_arrow")
     .off("click")
@@ -131,10 +152,39 @@ document.addEventListener("DOMContentLoaded", function () {
     scrollCheck();
   });
 
-  $("#float_btn").on("click", function () {
-    $("html,body").animate({ scrollTop: 0 }, 500);
+  function gnbPassiver() {
+    if ($("#gnb").hasClass("active")) {
+      $(".mobile_menu_trigger").removeClass("active");
+      $("#gnb").removeClass("active");
+    }
+  }
+  $(".scroll_top").on("click", function () {
+    gnbPassiver();
+    $("html,body").stop().animate({ scrollTop: 0 }, 500);
   });
-  /**** 프로젝트 슬라이더 끝 ****************/
+  $("#moveAboutMe").on("click", function () {
+    gnbPassiver();
+    $("html,body").stop().animate({ scrollTop: aboutMeTop }, 500);
+  });
+  $("#moveSkill").on("click", function () {
+    gnbPassiver();
+    $("html,body").stop().animate({ scrollTop: skillsTop }, 500);
+  });
+  $("#moveProject").on("click", function () {
+    gnbPassiver();
+    $("html,body").stop().animate({ scrollTop: projectsTop }, 500);
+  });
+  $("#moveFooter").on("click", function () {
+    gnbPassiver();
+    $("html,body").stop().animate({ scrollTop: footerTop }, 500);
+  });
+
+  /**** 모바일 헤더 ****************/
+
+  $("#header .mobile_menu_trigger").on("click", function () {
+    $(".mobile_menu_trigger").toggleClass("active");
+    $("#gnb").toggleClass("active");
+  });
 
   /**** 스크롤 체크, 헤더에 효과 ****************/
   function scrollCheck() {
@@ -401,14 +451,43 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   }
+  let totalWidth;
+  const _consoleItems = document.getElementById("consoleItems");
+  const $consoleItems = $("#consoleItems");
+  const childElements = _consoleItems.children;
+  function getTotalChildWidth() {
+    totalWidth = 0;
+    Array.from(childElements).forEach(child => {
+      totalWidth += child.getBoundingClientRect().width;
+    });
+  }
 
+  setTimeout(() => {
+    getTotalChildWidth();
+    _consoleItems.width = totalWidth + "px";
+  }, 1000);
   // console 보이기, 숨기기
   _hdConsole
     .querySelector("#btConsoleToggle")
     .addEventListener("click", function () {
-      _hdConsole.classList.toggle("hide");
+      if (totalWidth != 0) {
+        if (_hdConsole.classList.contains("hide")) {
+          _hdConsole.classList.remove("hide");
+          $consoleItems.stop().animate({ width: totalWidth }, 300);
+        } else {
+          _hdConsole.classList.add("hide");
+          $consoleItems.stop().animate({ width: 0 }, 300);
+        }
+      }
     });
-
+  window.addEventListener("resize", function () {
+    if (_hdConsole.classList.contains("hide")) {
+      $consoleItems.stop().animate({ width: 0 }, 300);
+    } else {
+      getTotalChildWidth();
+      $consoleItems.stop().css("width", totalWidth);
+    }
+  });
   _timeConsole.querySelector(".hour").innerHTML = forecastHour;
 
   _hdConsole.querySelector("#placeName").addEventListener("click", function () {
@@ -553,23 +632,15 @@ document.addEventListener("DOMContentLoaded", function () {
     runClock = setInterval(clock, 1000);
   }
 
-  // TODO setInterval이 걸린 clock 함수를 멈출 코드
   function stopClock() {
     clearInterval(runClock);
   }
 
-  // TODO 시간을 지정하고 그 시간에 맞춰 #main에 time_$ 클래스를 추가할 예정
   function setClock(hour, minute) {
     clockTarget.innerText =
       (hour < 10 ? "0" + hour : hour) +
       ":" +
       (minute < 10 ? "0" + minute : minute);
-    /* 
-            TODO 
-            시간 데이터에 따른 time 구분 메서드 호출
-            값에 맞는 시간을 불러오고 불러온 시간을 토대로
-            main.js의 단기예보 api를 호출        
-        */
   }
 
   startClock();
@@ -609,12 +680,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }));
     data_x = result[0].x;
     data_y = result[0].y;
-    /* 
-            TODO 
-            행정구 데이터 전송 
-            값에 맞는 좌표 불러오기
-            main.js의 단기예보 api를 위치에 맞게 다시 호출        
-        */
   }
   function setGridXY(x, y) {
     grid_x = x;
@@ -651,10 +716,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function setWeather() {
-    /* 
-            TODO 
-            변경 버튼을 눌렀을 때 설정
-        */
     let weatherValue = document
       .getElementById("weatherSelector")
       .querySelector(".active")
@@ -704,4 +765,7 @@ document.addEventListener("DOMContentLoaded", function () {
         break;
     }
   }
+
+  // 튜토리얼 보이기
+  
 });

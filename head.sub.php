@@ -107,7 +107,6 @@ add_javascript('<script src="'.G5_JS_URL.'/slick.min.js"></script>', 1);
 add_stylesheet('<link rel="stylesheet" href="'.G5_JS_URL.'/slick.css">', 1);
 add_javascript('<script src="'.G5_JS_URL.'/aos.js"></script>', 1);
 add_stylesheet('<link rel="stylesheet" href="'.G5_JS_URL.'/aos.css">', 1);
-add_stylesheet('<link rel="stylesheet" href="/css/main.css">', 0);
 add_javascript('<script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=5741fd56fa5c4391024a731fc0119668&libraries=services"></script>', 1);
 
 if(G5_IS_MOBILE) {

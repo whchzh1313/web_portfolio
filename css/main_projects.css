@@ -1,0 +1,368 @@
+@media screen and (min-width: 1280px) {
+  #projects {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+  #projects h2 {
+    width: 1180px;
+    margin: 0 auto;
+  }
+  #projects #projects_wrap {
+    width: 1180px;
+    margin: 0 auto;
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    -webkit-box-lines: multiple;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  #projects #projects_wrap .project {
+    position: relative;
+    width: calc((100% - 90px) / 4);
+    perspective: 1000px;
+  }
+  #projects #projects_wrap .project:hover .project_card {
+    transform: rotateY(180deg);
+  }
+  #projects #projects_wrap .project .project_card {
+    -webkit-transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+    perspective-origin: center;
+    transform-style: preserve-3d;
+  }
+  #projects #projects_wrap .project .project_card .project_front {
+    backface-visibility: hidden;
+    position: relative;
+    z-index: 2;
+  }
+  #projects #projects_wrap .project .project_card .project_front img {
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -o-border-radius: 12px;
+    width: 100%;
+  }
+  #projects #projects_wrap .project .project_card .project_back {
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -o-border-radius: 12px;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    color: #fff;
+    transform: rotateY(180deg);
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    -webkit-box-orient: vertical;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -moz-box-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+    background: rgba(22, 22, 22, 0.65);
+  }
+  #projects #projects_wrap .project .project_card .project_back .project_title {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.2em;
+    margin-bottom: 0.25em;
+  }
+  #projects #projects_wrap .project .project_card .project_back .project_desc {
+    word-break: keep-all;
+    font-size: 0.8rem;
+    line-height: 1.2em;
+    margin-bottom: 0.5em;
+  }
+  #projects #projects_wrap .project #project_kcell .project_back {
+    background: url("/images/projects/thumb/project_kcell.png") no-repeat left top/400%;
+  }
+  #projects #projects_wrap .project #project_mycell .project_back {
+    background: url("/images/projects/thumb/project_mycell.png") no-repeat left top/400%;
+  }
+  #projects #projects_wrap .project #project_angelot .project_back {
+    background: url("/images/projects/thumb/project_angelot.png") no-repeat left top/400%;
+  }
+  #projects #projects_wrap .project #project_enf .project_back {
+    background: url("/images/projects/thumb/project_enf.png") no-repeat left top/400%;
+  }
+  #projects #projects_wrap .project #project_dobongye .project_back {
+    background: url("/images/projects/thumb/project_dobongye.png") no-repeat left top/400%;
+  }
+  #projects #projects_wrap .project #project_cowell .project_back {
+    background: url("/images/projects/thumb/project_cowell.png") no-repeat left top/400%;
+  }
+  #projects #projects_wrap .project #project_eunu .project_back {
+    background: url("/images/projects/thumb/project_eunu.png") no-repeat left top/400%;
+  }
+  #projects #projects_wrap .project #project_iconiq .project_back {
+    background: url("/images/projects/thumb/project_iconiq.png") no-repeat left top/400%;
+  }
+  #projects #projects_wrap .project #project_m01 .project_back {
+    background: url("/images/projects/thumb/project_m01.png") no-repeat left top/400%;
+  }
+  #projects #projects_wrap .project #project_rejuent .project_back {
+    background: url("/images/projects/thumb/project_rejuent.png") no-repeat left top/400%;
+  }
+}
+@media screen and (max-width: 1279px) and (min-width: 769px) {
+  #projects {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+  #projects h2 {
+    width: 720px;
+    text-align: center;
+    margin: 0 auto;
+  }
+  #projects #projects_wrap {
+    width: 720px;
+    margin: 0 auto;
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    -webkit-box-lines: multiple;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  #projects #projects_wrap .project {
+    position: relative;
+    width: calc((100% - 40px) / 3);
+    perspective: 1000px;
+  }
+  #projects #projects_wrap .project:hover .project_card {
+    transform: rotateY(180deg);
+  }
+  #projects #projects_wrap .project .project_card {
+    -webkit-transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+    perspective-origin: center;
+    transform-style: preserve-3d;
+  }
+  #projects #projects_wrap .project .project_card .project_front {
+    backface-visibility: hidden;
+    position: relative;
+    z-index: 2;
+  }
+  #projects #projects_wrap .project .project_card .project_front img {
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -o-border-radius: 12px;
+    width: 100%;
+  }
+  #projects #projects_wrap .project .project_card .project_back {
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -o-border-radius: 12px;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    color: #fff;
+    transform: rotateY(180deg);
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    -webkit-box-orient: vertical;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -moz-box-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+    background: rgba(22, 22, 22, 0.65);
+  }
+  #projects #projects_wrap .project .project_card .project_back .project_title {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.2em;
+    margin-bottom: 0.25em;
+  }
+  #projects #projects_wrap .project .project_card .project_back .project_desc {
+    word-break: keep-all;
+    font-size: 0.8rem;
+    line-height: 1.2em;
+    margin-bottom: 0.5em;
+  }
+  #projects #projects_wrap .project #project_kcell .project_back {
+    background: url("/images/projects/thumb/project_kcell.png") no-repeat left top/400%;
+  }
+  #projects #projects_wrap .project #project_mycell .project_back {
+    background: url("/images/projects/thumb/project_mycell.png") no-repeat left top/400%;
+  }
+  #projects #projects_wrap .project #project_angelot .project_back {
+    background: url("/images/projects/thumb/project_angelot.png") no-repeat left top/400%;
+  }
+  #projects #projects_wrap .project #project_enf .project_back {
+    background: url("/images/projects/thumb/project_enf.png") no-repeat left top/400%;
+  }
+  #projects #projects_wrap .project #project_dobongye .project_back {
+    background: url("/images/projects/thumb/project_dobongye.png") no-repeat left top/400%;
+  }
+  #projects #projects_wrap .project #project_cowell .project_back {
+    background: url("/images/projects/thumb/project_cowell.png") no-repeat left top/400%;
+  }
+  #projects #projects_wrap .project #project_eunu .project_back {
+    background: url("/images/projects/thumb/project_eunu.png") no-repeat left top/400%;
+  }
+  #projects #projects_wrap .project #project_iconiq .project_back {
+    background: url("/images/projects/thumb/project_iconiq.png") no-repeat left top/400%;
+  }
+  #projects #projects_wrap .project #project_m01 .project_back {
+    background: url("/images/projects/thumb/project_m01.png") no-repeat left top/400%;
+  }
+  #projects #projects_wrap .project #project_rejuent .project_back {
+    background: url("/images/projects/thumb/project_rejuent.png") no-repeat left top/400%;
+  }
+}
+@media screen and (max-width: 768px) {
+  #projects {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+  #projects h2 {
+    width: 87.5vw;
+    text-align: center;
+    margin: 0 auto;
+  }
+  #projects #projects_wrap {
+    width: 87.5vw;
+    margin: 0 auto;
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    -webkit-box-lines: multiple;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  #projects #projects_wrap .project {
+    position: relative;
+    width: calc((100% - 20px) / 2);
+    perspective: 1000px;
+  }
+  #projects #projects_wrap .project:hover .project_card {
+    transform: rotateY(180deg);
+  }
+  #projects #projects_wrap .project .project_card {
+    -webkit-transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+    perspective-origin: center;
+    transform-style: preserve-3d;
+  }
+  #projects #projects_wrap .project .project_card .project_front {
+    backface-visibility: hidden;
+    position: relative;
+    z-index: 2;
+  }
+  #projects #projects_wrap .project .project_card .project_front img {
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -o-border-radius: 12px;
+    width: 100%;
+  }
+  #projects #projects_wrap .project .project_card .project_back {
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -o-border-radius: 12px;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    color: #fff;
+    transform: rotateY(180deg);
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    -webkit-box-orient: vertical;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -moz-box-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+    background: rgba(22, 22, 22, 0.65);
+  }
+  #projects #projects_wrap .project .project_card .project_back .project_title {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.2em;
+    margin-bottom: 0.25em;
+  }
+  #projects #projects_wrap .project .project_card .project_back .project_desc {
+    word-break: keep-all;
+    font-size: 0.8rem;
+    line-height: 1.2em;
+    margin-bottom: 0.5em;
+  }
+  #projects #projects_wrap .project #project_kcell .project_back {
+    background: url("/images/projects/thumb/project_kcell.png") no-repeat left top/400%;
+  }
+  #projects #projects_wrap .project #project_mycell .project_back {
+    background: url("/images/projects/thumb/project_mycell.png") no-repeat left top/400%;
+  }
+  #projects #projects_wrap .project #project_angelot .project_back {
+    background: url("/images/projects/thumb/project_angelot.png") no-repeat left top/400%;
+  }
+  #projects #projects_wrap .project #project_enf .project_back {
+    background: url("/images/projects/thumb/project_enf.png") no-repeat left top/400%;
+  }
+  #projects #projects_wrap .project #project_dobongye .project_back {
+    background: url("/images/projects/thumb/project_dobongye.png") no-repeat left top/400%;
+  }
+  #projects #projects_wrap .project #project_cowell .project_back {
+    background: url("/images/projects/thumb/project_cowell.png") no-repeat left top/400%;
+  }
+  #projects #projects_wrap .project #project_eunu .project_back {
+    background: url("/images/projects/thumb/project_eunu.png") no-repeat left top/400%;
+  }
+  #projects #projects_wrap .project #project_iconiq .project_back {
+    background: url("/images/projects/thumb/project_iconiq.png") no-repeat left top/400%;
+  }
+  #projects #projects_wrap .project #project_m01 .project_back {
+    background: url("/images/projects/thumb/project_m01.png") no-repeat left top/400%;
+  }
+  #projects #projects_wrap .project #project_rejuent .project_back {
+    background: url("/images/projects/thumb/project_rejuent.png") no-repeat left top/400%;
+  }
+}/*# sourceMappingURL=main_projects.css.map */

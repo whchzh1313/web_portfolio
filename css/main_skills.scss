@@ -1,0 +1,292 @@
+@charset "utf-8";
+
+@use "common" as common;
+
+@media screen and (min-width: 1280px) {
+  #skills {
+    padding-top: 64px;
+    padding-bottom: 64px;
+    h2 {
+      width: 1180px;
+      margin: 0 auto;
+    }
+    #skillsWrap {
+      width: 1180px;
+      margin: 0 auto;
+      @include common.display_flex;
+      // @include common.flex_wrap;
+      gap: 40px;
+      .column_wrap {
+        @include common.transition;
+        width: calc(100% / 3);
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
+        .skill_type {
+          @include common.border_radius_24;
+          @include common.content_shadow;
+          background: white;
+          padding: 20px;
+          margin-bottom: 40px;
+          overflow: hidden;
+          .type_name {
+            font-size: 1.25rem;
+            margin-bottom: 1em;
+            font-weight: 700;
+          }
+  
+          ul {
+            .skill:not(:last-child) {
+              margin-bottom: 20px;
+            }
+            .learning {
+              filter: grayscale(100%);
+              h4 {
+                color: #888;
+              }
+              p {
+                color: #888;
+              }
+            }
+            h4 {
+              font-size: 1rem;
+              margin-bottom: 0.75em;
+              font-weight: 700;
+            }
+            p {
+              font-size: 0.875rem;
+            }
+          }
+  
+          .type_1 {
+            .skill {
+              @include common.display_flex;
+              .l {
+                img {
+                  width: 100px;
+                  height: 100px;
+                  @include common.border_radius_24;
+                  @include common.content_shadow;
+                  margin-right: 12px;
+                }
+              }
+              .r {
+                padding-top: 36px;
+              }
+            }
+          }
+  
+          .type_2 {
+            .skill {
+              @include common.border_radius_24;
+              .t {
+                margin-bottom: 16px;
+                img {
+                  width: 100%;
+                  @include common.border_radius_24;
+                  @include common.content_shadow;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1279px) and (min-width: 769px) {
+  #skills {
+    padding-top: 64px;
+    padding-bottom: 64px;
+    h2 {
+      width: 720px;
+      margin: 0 auto;
+    }
+    #skillsWrap {
+      width: 720px;
+      margin: 0 auto;
+      @include common.display_flex;
+      @include common.flex_wrap;
+      gap: 20px;
+      .column_wrap {
+        @include common.transition;
+        width: calc((100% - 20px) / 2);
+        flex-grow: 1;
+        &:nth-child(2n) {
+          margin-right: 0;
+        }
+        &:last-child {
+          @include common.display_flex;
+          gap: 20px;
+          
+          .skill_type {
+            &:nth-child(1) {-ms-flex-order: 2;order: 2;}
+            &:nth-child(2) {-ms-flex-order: 1;order: 1;margin-bottom: 48px;}
+            width: calc((100% - 20px) / 2);
+            align-self: flex-end;
+            margin-top: -110px;
+          }
+        }
+        .skill_type {
+          @include common.border_radius_24;
+          @include common.content_shadow;
+          background: white;
+          padding: 20px;
+          margin-bottom: 20px;
+          overflow: hidden;
+          .type_name {
+            font-size: 1.25rem;
+            margin-bottom: 1em;
+            font-weight: 700;
+          }
+  
+          ul {
+            .skill:not(:last-child) {
+              margin-bottom: 20px;
+            }
+            .learning {
+              filter: grayscale(100%);
+              h4 {
+                color: #888;
+              }
+              p {
+                color: #888;
+              }
+            }
+            h4 {
+              font-size: 1rem;
+              margin-bottom: 0.75em;
+              font-weight: 700;
+            }
+            p {
+              font-size: 0.875rem;
+            }
+          }
+  
+          .type_1 {
+            .skill {
+              @include common.display_flex;
+              .l {
+                img {
+                  width: 100px;
+                  height: 100px;
+                  @include common.border_radius_24;
+                  @include common.content_shadow;
+                  margin-right: 12px;
+                }
+              }
+              .r {
+                padding-top: 36px;
+              }
+            }
+          }
+  
+          .type_2 {
+            .skill {
+              @include common.border_radius_24;
+              .t {
+                margin-bottom: 16px;
+                img {
+                  width: 100%;
+                  @include common.border_radius_24;
+                  @include common.content_shadow;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  #skills {
+    padding-top: 64px;
+    padding-bottom: 64px;
+    h2 {
+      text-align: center;
+      width: 87.5vw;
+      margin: 0 auto;
+    }
+    #skillsWrap {
+      width: 87.5vw;
+      margin: 0 auto;
+      .column_wrap {
+        @include common.transition;
+        width: 100%;
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
+        .skill_type {
+          @include common.border_radius_24;
+          @include common.content_shadow;
+          background: white;
+          padding: 20px;
+          margin-bottom: 40px;
+          overflow: hidden;
+          .type_name {
+            text-align: center;
+            font-size: 1.25rem;
+            margin-bottom: 1em;
+            font-weight: 700;
+          }
+  
+          ul {
+            .skill:not(:last-child) {
+              margin-bottom: 20px;
+            }
+            .learning {
+              filter: grayscale(100%);
+              h4 {
+                color: #888;
+              }
+              p {
+                color: #888;
+              }
+            }
+            h4 {
+              font-size: 1rem;
+              margin-bottom: 0.75em;
+              font-weight: 700;
+            }
+            p {
+              font-size: 0.875rem;
+            }
+          }
+  
+          .type_1 {
+            .skill {
+              @include common.display_flex;
+              .l {
+                img {
+                  width: 100px;
+                  height: 100px;
+                  @include common.border_radius_24;
+                  @include common.content_shadow;
+                  margin-right: 12px;
+                }
+              }
+              .r {
+                padding-top: 36px;
+              }
+            }
+          }
+  
+          .type_2 {
+            .skill {
+              @include common.border_radius_24;
+              .t {
+                margin-bottom: 16px;
+                img {
+                  width: 100%;
+                  @include common.border_radius_24;
+                  @include common.content_shadow;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

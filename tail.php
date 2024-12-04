@@ -11,7 +11,7 @@ if (G5_IS_MOBILE) {
     return;
 }
 ?>
-    <div id="float_btn">
+    <div id="float_btn" class="scroll_top">
         <div id="float_btn_bg" class="radius_100"></div>
         <div id="wave_circle" class="radius_100"></div>
         <img src="/images/icon_page_up.png" alt="상단으로">

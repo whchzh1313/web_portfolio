@@ -4,7 +4,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 <link rel="stylesheet" href="/css/console_style.css">
 <div id="hdConsole" class="console_style">
     <div id="btConsoleToggle"><button type="button"><img src="/images/hd_console_btn.png" alt=""></button></div>
-    <ul id="consolItems">
+    <ul id="consoleItems">
         <li>
             <h3>Place</h3>
             <p id="placeName">성남시 분당구</p>

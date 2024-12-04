@@ -15,6 +15,8 @@ if (G5_IS_MOBILE) {
 }
 
 include_once(G5_PATH.'/head.php');
+add_stylesheet('<link rel="stylesheet" href="/css/main.css">', 0);
+add_stylesheet('<link rel="stylesheet" href="/css/main_skills.css">', 0);
 
 include_once(G5_PATH.'/inc/hd_console.php');
 ?>
@@ -46,172 +48,47 @@ include_once(G5_PATH.'/inc/hd_console.php');
             </div>
             <div id="skill" class="inner_section">
                 <h3 data-aos="fade-up">Skill</h3>
-                    <!-- #skillWrap>(.skill_type*5>h3.skills_cate+(ul.type_1>li*2.skills>(.l>img).r>h4+p))+.skill_type>h3.skills_cate+ul.type_2>li.skills>(.t>img)+.b>h4+p -->
-                    <div id="skillWrap">
-                        <div class="skill_type">
-                            <h3 class="skills_cate">FrontEnd</h3>
-                            <ul class="type_1">
-                                <li class="skills">
-                                    <div class="l"><img src="/images/html.png" alt="HTML 아이콘"></div>
-                                    <div class="r">
-                                        <h4>HTML</h4>
-                                        <p>웹 페이지의 구조를 정의하는 마크업 언어로, 콘텐츠를 표현하기 위한 뼈대를 작성하는 데 사용.</p>
-                                    </div>
-                                </li>
-                                <li class="skills">
-                                    <div class="l"><img src="/images/css.png" alt="CSS 아이콘"></div>
-                                    <div class="r">
-                                        <h4>CSS</h4>
-                                        <p>웹 페이지의 디자인과 레이아웃을 구성하는 스타일링 언어.</p>
-                                    </div>
-                                </li>
-                                <li class="skills">
-                                    <div class="l"><img src="/images/sass.png" alt="SASS 아이콘"></div>
-                                    <div class="r">
-                                        <h4>SASS</h4>
-                                        <p>CSS의 확장 언어로, 코드 재사용과 효율적인 스타일 관리를 지원.</p>
-                                    </div>
-                                </li>
-                                <li class="skills">
-                                    <div class="l"><img src="/images/javascript.png" alt="자바스크립트 아이콘"></div>
-                                    <div class="r">
-                                        <h4>javascript</h4>
-                                        <p>웹 페이지의 동적 동작과 사용자와의 상호작용을 구현하기 위한 언어.</p>
-                                    </div>
-                                </li>
-                                <li class="skills">
-                                    <div class="l"><img src="/images/jquery.png" alt="제이쿼리 아이콘"></div>
-                                    <div class="r">
-                                        <h4>제이쿼리</h4>
-                                        <p>JavaScript의 라이브러리로 DOM 조작과 Ajax 요청을 간편하게 처리.</p>
-                                    </div>
-                                </li>
-                                <li class="skills learning">
-                                    <div class="l"><img src="/images/react.png" alt="리액트 아이콘"></div>
-                                    <div class="r">
-                                        <h4>React</h4>
-                                        <p></p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="skill_type">
-                            <h3 class="skills_cate">Design Tool</h3>
-                            <ul class="type_1">
-                                <li class="skills">
-                                    <div class="l"><img src="/images/photoshop.png" alt="포토샵 아이콘"></div>
-                                    <div class="r">
-                                        <h4>Photoshop</h4>
-                                        <p></p>
-                                    </div>
-                                </li>
-                                <li class="skills">
-                                    <div class="l"><img src="/images/illustrator.png" alt="일러스트 아이콘"></div>
-                                    <div class="r">
-                                        <h4>Illustrator</h4>
-                                        <p></p>
-                                    </div>
-                                </li>
-                                <li class="skills">
-                                    <div class="l"><img src="/images/figma.png" alt="피그마 아이콘"></div>
-                                    <div class="r">
-                                        <h4>Figma</h4>
-                                        <p></p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="skill_type">
-                            <h3 class="skills_cate">Editor</h3>
-                            <ul class="type_1">
-                                <li class="skills">
-                                    <div class="l"><img src="/images/visual_studio_code.png" alt="비주얼스튜디오 아이콘"></div>
-                                    <div class="r">
-                                        <h4>Visual Studio Code</h4>
-                                        <p></p>
-                                    </div>
-                                </li>
-                                <li class="skills">
-                                    <div class="l"><img src="/images/android_studio.png" alt="안드로이드 스튜디오 아이콘"></div>
-                                    <div class="r">
-                                        <h4>Android Studio</h4>
-                                        <p></p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="skill_type">
-                            <h3 class="skills_cate">Android</h3>
-                            <ul class="type_1">
-                                <li class="skills">
-                                    <div class="l"><img src="/images/kotlin.png" alt="코틀린 아이콘"></div>
-                                    <div class="r">
-                                        <h4>Kotlin</h4>
-                                        <p></p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="skill_type">
-                            <h3 class="skills_cate">Collaboration</h3>
-                            <ul class="type_1">
-                                <li class="skills">
-                                    <div class="l"><img src="/images/github.png" alt="깃허브 아이콘"></div>
-                                    <div class="r">
-                                        <h4>Github</h4>
-                                        <p></p>
-                                    </div>
-                                </li>
-                                <li class="skills">
-                                    <div class="l"><img src="/images/notion.png" alt="노션 아이콘"></div>
-                                    <div class="r">
-                                        <h4>Notion</h4>
-                                        <p></p>
-                                    </div>
-                                </li>
-                                <li class="skills">
-                                    <div class="l"><img src="/images/notion.png" alt="슬랙 아이콘"></div>
-                                    <div class="r">
-                                        <h4>Slack</h4>
-                                        <p></p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="skill_type">
-                            <h3 class="skills_cate">CMS</h3>
-                            <ul class="type_2">
-                                <li class="skills">
-                                    <div class="t"><img src="/images/gnuboard.png" alt="그누보드 아이콘"></div>
-                                    <div class="b">
-                                        <h4>그누보드</h4>
-                                        <p></p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="skill_type">
-                            <h3 class="skills_cate">BackEnd</h3>
-                            <ul class="type_1">
-                                <li class="skills">
-                                    <div class="l"><img src="/images/php.png" alt="PHP 아이콘"></div>
-                                    <div class="r">
-                                        <h4>PHP</h4>
-                                        <p>서버 측 스크립트 언어로, 데이터 처리와 동적 웹 페이지 생성을 구현.</p>
-                                    </div>
-                                </li>
-                                <li class="skills">
-                                    <div class="l"><img src="/images/php.png" alt="PHP 아이콘"></div>
-                                    <div class="r">
-                                        <h4>MySQL</h4>
-                                        <p>관계형 데이터베이스로 데이터를 효율적으로 관리합니다.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-
-                        
+                <div id="skillWrap" class="flex_box flex_wrap">
+                    <div class="skills web" data-aos="fade-up" data-aos-delay="0">
+                        <h4>Web</h4>
+                        <ul class="flex_box skill_chips">
+                            <li class="chip radius_100">HTML</li>
+                            <li class="chip radius_100">CSS</li>
+                            <li class="chip radius_100">Jquery</li>
+                            <li class="chip radius_100">Mysql</li>
+                            <li class="chip radius_100">Gnuboard</li>
+                        </ul>
                     </div>
+                    <div class="skills design" data-aos="fade-up" data-aos-delay="100">
+                        <h4>Design & Prototyping</h4>
+                        <ul class="flex_box skill_chips">
+                            <li class="chip radius_100">Figma</li>
+                            <li class="chip radius_100">Photoshop</li>
+                            <li class="chip radius_100">Illustrator</li>
+                        </ul>
+                    </div>
+                    <div class="skills tool" data-aos="fade-up" data-aos-delay="200">
+                        <h4>Tool</h4>
+                        <ul class="flex_box skill_chips">
+                            <li class="chip radius_100">VSCode</li>
+                            <li class="chip radius_100">Android Studio</li>
+                        </ul>
+                    </div>
+                    <div class="skills version" data-aos="fade-up" data-aos-delay="300">
+                        <h4>Version Control & Collaboration</h4>
+                        <ul class="flex_box skill_chips">
+                            <li class="chip radius_100">Notion</li>
+                            <li class="chip radius_100">Slack</li>
+                        </ul>
+                    </div>
+                    <div class="skills mobile_app" data-aos="fade-up" data-aos-delay="400">
+                        <h4>MobileApp</h4>
+                        <ul class="flex_box skill_chips">
+                            <li class="chip radius_100">Kotlin</li>
+                            <li class="chip radius_100">Android Studio</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
         <div id="project" class="primary_bg">
